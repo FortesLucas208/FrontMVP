@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVida - Portal de Sustentabilidade</title>
+    <!-- Tailwind CSS para Estilização Moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de Cores Personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earth: {
+                            100: '#f4f1ea',
+                            200: '#e3dcc8',
+                            800: '#5c5443',
+                            900: '#3e382c',
+                        },
+                        leaf: {
+                            500: '#2d6a4f',
+                            600: '#1b4332',
+                            700: '#081c15',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Estilos adicionais para transições suaves */
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Início</a>
+                    <a href="#noticias" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Notícias</a>
+                    <a href="#topicos" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Reciclagem</a>
+                    <a href="#dicas" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Consumo Consciente</a>
+                    <a href="#contato" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-earth-800 hover:text-leaf-500 focus:outline-none p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="#noticias" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="#topicos" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Reciclagem</a>
+                <a href="#dicas" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Consumo Consciente</a>
+                <a href="#contato" class="block px-3 py-3 text-base font-medium text-leaf-600 font-bold hover:bg-earth-100 rounded-md mt-4">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-20 pb-32 flex content-center items-center justify-center min-h-screen">
+        <!-- Background Image -->
+        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center flex flex-col items-center">
+            <span class="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm font-semibold tracking-wider uppercase mb-6 inline-block">O Futuro é Verde</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 max-w-4xl drop-shadow-lg">
+                Salve o Planeta <br/><span class="text-green-300">Começando por Você</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 drop-shadow-md">
+                Descubra como pequenas mudanças na sua rotina podem criar um impacto gigante. Junte-se à revolução do consumo consciente e da economia circular.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#topicos" class="bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg">
+                    Saiba Mais
+                    <i class="ph ph-arrow-right font-bold"></i>
+                </a>
+                <a href="#dicas" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center text-lg">
+                    Dica do Dia
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative bottom wave (SVG) -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none z-10">
+            <svg class="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.6,128.5,207,114.62,246.5,106.65,285.86,88.4,321.39,56.44Z" class="fill-earth-100"></path>
+            </svg>
+        </div>
+    </header>
+
+    <section id="topicos" class="py-20 bg-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-leaf-700 mb-4">Tópicos em Destaque</h2>
+                <div class="h-1 w-20 bg-leaf-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-earth-800 text-lg">Explore as principais áreas de atuação onde você pode fazer a diferença hoje mesmo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Energia Renovável" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-leaf-600 shadow">Inovação</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="ph ph-sun text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-earth-900">Energia Renovável</h3>
+                        </div>
+                        <p class="text-earth-800 mb-6 line-clamp-3">
+                            Descubra como a transição para fontes limpas, como energia solar e eólica, está moldando um futuro sustentável e reduzindo a pegada de carbono.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                            Ler artigo completo
+                            <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Economia Circular" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-leaf-600 shadow">Conceito</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="ph ph-arrows-clockwise text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-earth-900">Economia Circular</h3>
+                        </div>
+                        <p class="text-earth-800 mb-6 line-clamp-3">
+                            Repensar, reduzir, reutilizar e reciclar. Entenda o modelo que elimina o conceito de lixo e mantém materiais em uso contínuo.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                            Ler artigo completo
+                            <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desperdício Zero" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-leaf-600 shadow">Estilo de Vida</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                                <i class="ph ph-trash text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-earth-900">Desperdício Zero</h3>
+                        </div>
+                        <p class="text-earth-800 mb-6 line-clamp-3">
+                            Dicas práticas para reduzir drasticamente a quantidade de lixo que você produz em casa, substituindo plásticos e descartáveis por opções duráveis.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                            Ler artigo completo
+                            <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dicas" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-earth-200/40 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-earth-200 shadow-sm">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-10 -left-10 text-leaf-500/10 transform -rotate-12">
+                    <i class="ph-fill ph-plant text-[150px]"></i>
+                </div>
+                <div class="absolute -bottom-10 -right-10 text-leaf-500/10 transform rotate-12">
+                    <i class="ph-fill ph-globe text-[150px]"></i>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-leaf-100 text-leaf-600 mb-6 shadow-sm">
+                        <i class="ph ph-lightbulb text-3xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-earth-900 mb-4">Dica Eco do Dia</h2>
+                    
+                    <div class="min-h-[120px] flex items-center justify-center mb-8">
+                        <p id="tip-text" class="text-xl md:text-2xl text-earth-800 font-medium italic transition-opacity duration-300">
+                            "Clique no botão abaixo para descobrir uma nova forma de ajudar o planeta hoje."
+                        </p>
+                    </div>
+
+                    <button id="generate-tip-btn" class="bg-leaf-600 hover:bg-leaf-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-xl transform active:scale-95 flex items-center justify-center gap-2 mx-auto text-lg">
+                        <i class="ph ph-magic-wand"></i>
+                        Nova Dica Sustentável
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-leaf-500"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">
+                        Nossa missão é inspirar e informar sobre práticas sustentáveis para construirmos juntos um futuro mais verde, justo e próspero para as próximas gerações.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white hover:text-white">
+                            <i class="ph ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white hover:text-white">
+                            <i class="ph ph-twitter-logo text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white hover:text-white">
+                            <i class="ph ph-facebook-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Navegação</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#topicos" class="text-leaf-100/80 hover:text-white transition-colors">Tópicos em Destaque</a></li>
+                        <li><a href="#dicas" class="text-leaf-100/80 hover:text-white transition-colors">Dicas Diárias</a></li>
+                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Sobre Nós</a></li>
+                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contato</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-envelope-simple text-xl text-leaf-500 mt-1"></i>
+                            <span class="text-leaf-100/80">contato@ecovida.com.br</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-map-pin text-xl text-leaf-500 mt-1"></i>
+                            <span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/60 text-sm">
+                <p>&copy; <span id="current-year"></span> EcoVida Portal de Sustentabilidade. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Toggle Icon between List and X
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                } else {
+                    menuIcon.classList.remove('ph-list');
+                    menuIcon.classList.add('ph-x');
+                }
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                });
+            });
+
+            // 2. Navbar Scroll Effect (Add shadow/background transparency change)
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.replace('bg-white/90', 'bg-white/95');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navbar.classList.replace('bg-white/95', 'bg-white/90');
+                }
+            });
+
+            // 3. Daily Eco-Tip Logic
+            const ecoTips = [
+                "Feche a torneira enquanto escova os dentes e economize até 15 litros de água por escovação.",
+                "Substitua lâmpadas incandescentes por LEDs, que consomem até 80% menos energia e duram muito mais.",
+                "Separe seu lixo orgânico do reciclável para facilitar o trabalho das cooperativas e diminuir aterros.",
+                "Leve sua própria ecobag ao supermercado, farmácia ou padaria para evitar o uso de sacolas plásticas.",
+                "Reduza o consumo de carne em pelo menos uma refeição por semana (Segunda Sem Carne).",
+                "Aproveite a luz natural abrindo janelas e cortinas durante o dia antes de acender as luzes.",
+                "Desligue os aparelhos eletrônicos da tomada (stand-by) quando não estiverem em uso longo.",
+                "Transforme restos orgânicos em adubo para suas plantas através da compostagem caseira.",
+                "Prefira produtos locais e da estação; isso reduz a emissão de carbono com transporte e apoia a economia local.",
+                "Compre roupas de brechós ou marcas com certificação sustentável para reduzir o impacto da moda rápida."
+            ];
+
+            const tipTextEl = document.getElementById('tip-text');
+            const generateTipBtn = document.getElementById('generate-tip-btn');
+            
+            // To prevent showing the same tip twice in a row
+            let lastTipIndex = -1;
+
+            generateTipBtn.addEventListener('click', () => {
+                // Fade out effect
+                tipTextEl.style.opacity = 0;
+                
+                // Add a small animation to the button icon
+                const btnIcon = generateTipBtn.querySelector('i');
+                btnIcon.classList.add('animate-spin');
+                
+                setTimeout(() => {
+                    let randomIndex;
+                    // Ensure we get a different tip than the last one
+                    do {
+                        randomIndex = Math.floor(Math.random() * ecoTips.length);
+                    } while (randomIndex === lastTipIndex && ecoTips.length > 1);
+                    
+                    lastTipIndex = randomIndex;
+                    
+                    // Update text and fade back in
+                    tipTextEl.textContent = `"${ecoTips[randomIndex]}"`;
+                    tipTextEl.classList.add('text-leaf-700');
+                    tipTextEl.style.opacity = 1;
+                    
+                    // Remove spin animation after a short delay
+                    setTimeout(() => {
+                        btnIcon.classList.remove('animate-spin');
+                    }, 500);
+                }, 300); // 300ms matches the CSS transition duration
+            });
+
+            // 4. Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
