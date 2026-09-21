@@ -10,5 +10,12 @@ Victor Alves Rodrigues Braulino | 48216305 |
 
 Vinicius Passos Macedo          | 47116871 |
 
+Resumo do projeto:
+
+Site de incentivo e conscientização ambiental, sendo interativo/passivo.
+
+
+
+
 
 # FrontMVP
