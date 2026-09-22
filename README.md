@@ -27,7 +27,7 @@ Vinicius Passos Macedo          | 47116871 |
 
 ## Licença
 
-Este projeto é desenvolvido para fins acadêmicos, no âmbito da Atividade A2 da disciplina de Front-End. [Definir licença, caso aplicável.]
+Este projeto é desenvolvido para fins acadêmicos, no âmbito da Atividade A2 da disciplina de Front-End. 
 
 # Impacto na Prática
 
