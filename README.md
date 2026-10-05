@@ -8,7 +8,6 @@ Site de incentivo e conscientização ambiental, sendo interativo/passivo.
 
 | Nome                            | RGM      | 
 |---------------------------------|----------|
-| Anthony Werick Eloi de França   | 47017228 |
 | Gustavo Batista do Canto        | 46898000 |
 | Lucas Fortes de Melo            | 46781977 |
 | Victor Alves Rodrigues Braulino | 48216305 |
