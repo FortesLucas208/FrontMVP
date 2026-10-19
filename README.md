@@ -8,9 +8,8 @@ Site de incentivo e conscientização ambiental, sendo interativo/passivo.
 
 | Nome                            | RGM      | 
 |---------------------------------|----------|
-| Gustavo Batista do Canto        | 46898000 |
+| Felipe Piazza Bononi            | 47349361 |
 | Lucas Fortes de Melo            | 46761977 |
-| Victor Alves Rodrigues Braulino | 48216305 |
 | Vinicius Passos Macedo          | 47116871 |
 
 ## Instituição e Curso
