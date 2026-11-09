@@ -15,7 +15,7 @@ Site de incentivo e conscientização ambiental, sendo interativo/passivo.
 ## Instituição e Curso
 
 - **Instituição:** UNICID — Universidade Cidade de São Paulo
-- **Curso:** Bacharel em Ciência da Computaria 
+- **Curso:** Bacharel em Ciência da Computação
 - **Disciplina:** Desenvolvimento Front-End para web
 - **Professor(a) orientador(a):** Paulo Sergio Fratta Junior
 
