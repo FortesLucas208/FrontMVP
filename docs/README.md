@@ -1,12 +1,12 @@
+# Impacto na Prática (EcoVida)
 
+Site de incentivo e conscientização ambiental, interativo e passivo, que conduz o usuário por **Aprender → Responder → Agir**.
 
-Resumo do projeto:
-
-Site de incentivo e conscientização ambiental, sendo interativo/passivo.
+🌐 **Site publicado:** https://ecovidaproject.up.railway.app
 
 ## Autores
 
-| Nome                            | RGM      | 
+| Nome                            | RGM      |
 |---------------------------------|----------|
 | Felipe Piazza Bononi            | 47349361 |
 | Lucas Fortes de Melo            | 46761977 |
@@ -16,157 +16,114 @@ Site de incentivo e conscientização ambiental, sendo interativo/passivo.
 
 - **Instituição:** UNICID — Universidade Cidade de São Paulo
 - **Curso:** Bacharel em Ciência da Computação
-- **Disciplina:** Desenvolvimento Front-End para web
-- **Professor(a) orientador(a):** Paulo Sergio Fratta Junior
+- **Disciplina:** Desenvolvimento Front-End para Web
+- **Professor orientador:** Paulo Sergio Fratta Junior
+- **Atividade:** A2 — Entrega 01
 
 ## Licença
 
-Este projeto é desenvolvido para fins acadêmicos, no âmbito da Atividade A2 da disciplina de Front-End. 
+Projeto desenvolvido para fins acadêmicos, no âmbito da Atividade A2 da disciplina de Front-End.
 
-# Impacto na Prática
+---
 
 ## Descrição
 
-**Impacto na Prática** é um projeto web desenvolvido para a disciplina de Front-End do Curso Superior de Informática da UNICID, no âmbito da **Atividade A2 — Entrega 01**. O projeto propõe uma plataforma voltada para sustentabilidade e impacto social, na qual o usuário não apenas lê informações sobre esses temas, mas é conduzido por uma experiência que envolve aprendizado, reflexão e ação prática.
-
-A proposta central pode ser resumida na sequência:
+**Impacto na Prática** (marca **EcoVida**) é um projeto web sobre sustentabilidade e impacto social. O usuário não apenas lê informações: é conduzido por uma experiência que envolve aprendizado, reflexão e ação prática.
 
 **Aprender → Responder → Agir**
 
-## Contextualização
+## Contextualização e Problema
 
-Grande parte do conteúdo disponível sobre sustentabilidade e impacto social é apresentado de forma expositiva, exigindo do usuário apenas a leitura passiva de informações. Isso frequentemente resulta em baixo engajamento e pouca conexão entre o conhecimento adquirido e a mudança de comportamento no cotidiano.
-
-## Problema Identificado
-
-Há uma lacuna entre o acesso à informação sobre sustentabilidade e impacto social e a efetiva adoção de práticas conscientes no dia a dia, especialmente entre jovens e estudantes.
+Grande parte do conteúdo sobre sustentabilidade é expositiva e exige só leitura passiva, o que gera baixo engajamento e pouca mudança de comportamento. Há uma lacuna entre o acesso à informação e a adoção de práticas conscientes no dia a dia, especialmente entre jovens e estudantes.
 
 ## Justificativa
 
-Ao transformar a informação em uma experiência guiada — que envolve contextualização, reflexão por meio de quiz e uma ação prática correspondente —, é possível aumentar o engajamento do usuário e incentivar, de forma mais efetiva, pequenas mudanças de comportamento com potencial impacto coletivo. Além disso, o projeto atende ao tema obrigatório da Atividade A2 (sustentabilidade e impacto social) e incorpora acessibilidade como requisito central, ampliando o alcance da proposta a pessoas com deficiência.
+Ao transformar a informação em uma experiência guiada (contextualização, quiz e ação prática), é possível aumentar o engajamento e incentivar pequenas mudanças de comportamento com potencial impacto coletivo. O projeto atende ao tema obrigatório da A2 (sustentabilidade e impacto social) e trata a acessibilidade como requisito central.
 
 ## Objetivo Geral
 
-Desenvolver a primeira versão de um site completo, em HTML5 e CSS3, com páginas interligadas e navegáveis, que aborde sustentabilidade e impacto social por meio de uma experiência que conecta aprendizado, reflexão e ação prática, com acessibilidade para pessoas com deficiência.
+Desenvolver a primeira versão de um site completo, com páginas interligadas e navegáveis, que aborde sustentabilidade e impacto social conectando aprendizado, reflexão e ação prática, com acessibilidade para pessoas com deficiência.
 
 ## Objetivos Específicos
 
-- Apresentar, de forma acessível, problemas relacionados à sustentabilidade e ao impacto social;
-- Estruturar uma experiência que conduza o usuário por contextualização, quiz e desafio prático;
-- Aplicar boas práticas de HTML5 semântico, incluindo formulários validados e recursos multimídia;
-- Adotar medidas de acessibilidade digital, como texto alternativo, contraste, navegação por teclado e uso de ARIA quando necessário;
-- Garantir um layout responsivo, adaptado a diferentes tamanhos de tela;
-- Documentar o projeto de forma clara, incluindo escopo, orçamento de hospedagem e evidências de testes.
+- Apresentar de forma acessível problemas de sustentabilidade e impacto social;
+- Estruturar uma experiência com contextualização, quiz e desafio prático;
+- Aplicar HTML5 semântico, formulário validado e recursos multimídia;
+- Adotar medidas de acessibilidade digital (texto alternativo, contraste, teclado, ARIA);
+- Garantir layout responsivo;
+- Documentar o projeto, incluindo escopo, orçamento de hospedagem e evidências de testes.
 
 ## Público-Alvo
 
-- Jovens e estudantes;
-- Pessoas interessadas em sustentabilidade;
-- Pessoas que desejam adotar hábitos mais conscientes;
-- Pessoas interessadas em impacto social;
-- Pessoas com deficiência (PCD), consideradas público prioritário para os requisitos de acessibilidade do projeto.
+Jovens e estudantes; pessoas interessadas em sustentabilidade, hábitos conscientes e impacto social; e pessoas com deficiência (PCD), público prioritário dos requisitos de acessibilidade.
 
-## Conceito da Experiência do Usuário
+## Conceito da Experiência
 
-A experiência é construída para que o usuário não apenas leia informações, mas participe ativamente de um processo. Ela parte de uma pergunta orientadora:
+Pergunta orientadora: **"Quanto tempo você tem para causar um impacto?"**
 
-> "Quanto tempo você tem para causar um impacto?"
+1. **Contextualização:** explicação curta sobre um problema, suas consequências e relevância.
+2. **Quiz:** pergunta para estimular a reflexão antes da ação.
+3. **Desafio prático:** ação simples, compatível com o tempo escolhido (5, 15 ou 30 min ou mais).
+4. **Impacto:** por que a ação importa, ligando a atitude individual ao impacto coletivo.
 
-A partir dessa escolha, e da seleção de uma área de interesse, o usuário é conduzido por etapas que combinam contextualização de um problema, reflexão por meio de um quiz e um desafio prático compatível com o tempo disponível.
-
-### Estrutura do desafio
-
-1. **Contextualização** — explicação curta sobre um problema (por exemplo, desperdício de água), suas consequências e sua relevância.
-2. **Quiz** — pergunta ou pequeno questionário relacionado ao tema, para estimular a reflexão antes da ação.
-3. **Desafio prático** — ação simples e realista, compatível com o tempo escolhido (por exemplo, verificar vazamentos em casa em 5 minutos).
-4. **Impacto** — explicação de por que aquela ação importa, conectando a atitude individual ao impacto coletivo.
-
-### Exemplos de desafios
-
-- **Reciclagem:** separação de resíduos e organização de materiais recicláveis;
-- **Economia de água:** identificação de desperdícios e ações de consumo consciente;
-- **Consumo consciente:** avaliação de uma compra ou reaproveitamento de um item já existente;
-- **Desperdício de alimentos:** aproveitamento e planejamento de refeições;
-- **Impacto social:** conhecer uma iniciativa local, participar de uma ação voluntária ou apoiar uma causa.
+Áreas disponíveis: Reciclagem, Economia de água, Consumo consciente, Desperdício de alimentos e Impacto social.
 
 ## Fluxo do Usuário
 
 ```
-Usuário entra no site
-        ↓
-Escolhe quanto tempo possui
-        ↓
-Escolhe uma área de interesse
-        ↓
-Conhece o problema (contextualização)
-        ↓
-Responde ao quiz
-        ↓
-Recebe um desafio prático
-        ↓
-Realiza a ação na vida real
-        ↓
-Conhece o impacto daquela ação
+Entra no site → Escolhe o tempo → Escolhe a área → Contextualização
+→ Quiz → Desafio prático → Realiza a ação → Conhece o impacto
 ```
 
-## Mapa do Site (Páginas do Projeto)
-
-Conforme os requisitos mínimos da Atividade A2, o site é composto por 10 páginas HTML interligadas:
+## Mapa do Site (10 páginas)
 
 | Nº | Página | Conteúdo |
 |----|--------|----------|
-| 1 | `index.html` | Apresentação do projeto, pergunta inicial sobre o tempo disponível, resumo do conceito Aprender → Responder → Agir e menu principal |
-| 2 | `sobre.html` | História, missão, visão e valores do projeto |
-| 3 | `projetos.html` | Núcleo interativo da experiência: seleção de tempo e área de interesse, contextualização, quiz e desafio prático |
-| 4 | `impacto.html` | Explicação de como as ações propostas se conectam a um impacto coletivo; dados e informações de apoio sobre os temas abordados |
-| 5 | `acessibilidade.html` | Medidas de acessibilidade e inclusão adotadas no site, com foco em pessoas com deficiência |
-| 6 | `galeria.html` | Galeria de imagens relacionadas aos temas do projeto, com legendas e indicação de fontes |
-| 7 | `midia.html` | Conteúdo multimídia de apoio (vídeo, áudio e conteúdo incorporado via iframe) |
-| 8 | `noticias.html` | Notícias, artigos ou conteúdos informativos relacionados ao tema |
-| 9 | `contato.html` | Formulário de contato validado, dados fictícios de contato e apresentação dos integrantes da equipe |
-| 10 | `orcamento_hospedagem.html` | Relatório comparativo de opções de hospedagem e domínio consideradas para o projeto |
+| 1 | `index.html` | Apresentação, pergunta sobre o tempo disponível, tópicos em destaque, dica do dia e menu |
+| 2 | `sobre.html` | História, missão, visão, valores, método e público-alvo |
+| 3 | `projetos.html` | Experiência interativa: tempo, área, contexto, quiz, desafio e impacto |
+| 4 | `impacto.html` | Da ação individual ao impacto coletivo, dados de apoio e simulador de litros poupados |
+| 5 | `acessibilidade.html` | Medidas de acessibilidade, ajuste de fonte e animações, contraste e atalhos de teclado |
+| 6 | `galeria.html` | Galeria de imagens com legendas, fontes e visualização ampliada |
+| 7 | `midia.html` | Vídeo incorporado (YouTube, via `<iframe>`) e mapa incorporado (OpenStreetMap) |
+| 8 | `noticias.html` | Artigos informativos sobre os temas do projeto |
+| 9 | `contato.html` | Formulário validado, dados fictícios de contato e apresentação da equipe |
+| 10 | `orcamento_hospedagem.html` | Comparativo de hospedagem e domínio, com a opção adotada |
 
-## Funcionalidades
+## Funcionalidades Implementadas
 
-De acordo com as regras da Atividade A2, o JavaScript é opcional nesta entrega — a equipe deve apresentar uma interface completa em HTML e CSS que represente a experiência do site. Por isso, as funcionalidades a seguir são apresentadas separadas entre o que está implementado nesta entrega e o que está planejado para uma etapa posterior.
+- Navegação entre as 10 páginas, com menu responsivo e submenu "Mais";
+- Experiência completa em `projetos.html` (seleção de tempo e área, quiz com feedback imediato, exibição condicional do desafio e do impacto, e reinício);
+- Link de entrada pela página inicial com tempo pré-selecionado (`projetos.html?tempo=15`);
+- Dica sustentável aleatória na página inicial;
+- Simulador de impacto coletivo em `impacto.html`;
+- Formulário de contato com validação nativa HTML5 (`required`, `email`, `tel` com `pattern`, `date`, `number`, `select`, `radio`, `checkbox`);
+- Galeria com visualização ampliada (`<dialog>`);
+- Preferências de acessibilidade (tamanho do texto e redução de animações) salvas no navegador (`localStorage`).
 
-### Implementadas nesta entrega (HTML + CSS)
+## Acessibilidade
 
-- Estrutura navegável das 10 páginas do site;
-- Layout responsivo, adaptado a diferentes tamanhos de tela;
-- Formulário de contato com validação nativa de HTML5 (`required`, `email`, `tel`, `date`, `pattern`, entre outros);
-- Recursos multimídia incorporados (`<video>`, `<audio>`, `<iframe>`);
-- Representação visual das etapas da experiência (contextualização, quiz e desafio) na página `projetos.html`;
-- Aplicação de boas práticas de acessibilidade estrutural (HTML semântico, `alt` descritivo, `lang="pt-BR"`, contraste de cores).
-
-### Planejadas (dependentes de JavaScript, para etapa futura)
-
-- Seleção dinâmica do tempo disponível e da área de interesse pelo usuário;
-- Exibição condicional do desafio de acordo com as escolhas realizadas;
-- Validação interativa das respostas do quiz, com feedback imediato;
-- Navegação dinâmica entre etapas sem recarregamento da página.
-
-## Requisitos Técnicos Atendidos
-
-- **HTML5 semântico:** uso de `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` e hierarquia adequada de `<h1>` a `<h3>`;
-- **Formulário:** atributos de validação nativa (`required`, `email`, `tel`, `date`, `number`, `pattern`) e uso correto de `<label for>`;
-- **Multimídia:** `<video controls poster>`, `<audio controls>` e `<iframe>`;
-- **Acessibilidade:** texto alternativo (`alt`) descritivo em imagens, contraste adequado de cores, navegação por teclado, `lang="pt-BR"` e atributos ARIA quando necessário;
-- **Validação de código:** páginas validadas no W3C Validator.
+- Texto alternativo (`alt`) em imagens; ícones decorativos com `aria-hidden`;
+- Contraste de cores acima de 4,5:1 (razões calculadas na página de acessibilidade);
+- Navegação completa por teclado, foco visível e link "Pular para o conteúdo principal";
+- `lang="pt-BR"` em todas as páginas e HTML semântico (`header`, `nav`, `main`, `section`, `article`, `footer`);
+- `<label for>` associado a cada campo e `aria-describedby` em textos de ajuda;
+- Tabelas com `caption` e `scope`; `title` descritivo nos `<iframe>`;
+- Respeito à preferência de movimento reduzido do sistema.
 
 ## Tecnologias Utilizadas
 
-- **HTML5** — estrutura semântica das páginas;
-- **CSS3** — identidade visual, layout e responsividade;
-- **JavaScript** — previsto para a interatividade completa da experiência (seleção de desafios, quiz, validação de respostas, navegação dinâmica), com uso opcional nesta entrega, conforme orientação da atividade.
+- **HTML5**, **CSS3** e **JavaScript** (sem framework JS);
+- **Tailwind CSS** (via CDN) para estilização, complementado por `css/style.css` e `css/responsive.css`;
+- **Google Fonts** (Inter) e **Phosphor Icons** (via CDN);
+- Imagens do **Unsplash**; mapa do **OpenStreetMap**; vídeo do **YouTube**.
 
-Não são utilizados frameworks, bibliotecas externas, APIs ou banco de dados.
+Não há backend, banco de dados nem APIs próprias. Por usar CDNs e conteúdo externo, o site precisa de conexão com a internet para exibir todos os recursos.
 
 ## Estrutura do Projeto
 
 ```
-impacto-na-pratica/  (nome_da_equipe/)
-│
+impacto-na-pratica/
 ├── index.html
 ├── sobre.html
 ├── projetos.html
@@ -177,19 +134,14 @@ impacto-na-pratica/  (nome_da_equipe/)
 ├── noticias.html
 ├── contato.html
 ├── orcamento_hospedagem.html
-│
 ├── css/
 │   ├── style.css
 │   └── responsive.css
-│
 ├── js/
 │   └── main.js
-│
 ├── img/
-│
 ├── assets/
 │   └── icons/
-│
 └── docs/
     ├── README.md
     ├── diario-de-bordo.md
@@ -197,83 +149,47 @@ impacto-na-pratica/  (nome_da_equipe/)
     └── evidencias-de-testes/
 ```
 
-Esta é uma estrutura sugerida, alinhada aos requisitos da Atividade A2, e pode ser adaptada conforme a implementação final.
+## Como Executar
 
-## Acessibilidade
+**Online:** acesse https://ecovidaproject.up.railway.app
 
-A acessibilidade é tratada como requisito central do projeto, não apenas como um complemento visual. As medidas previstas incluem:
+**Localmente:**
+1. Baixe ou clone o repositório;
+2. Abra `index.html` em um navegador (de preferência servindo a pasta, por exemplo com `python -m http.server`, para que o vídeo incorporado funcione);
+3. É necessária conexão com a internet para carregar Tailwind, fontes, ícones, imagens, vídeo e mapa.
 
-- Texto alternativo (`alt`) descritivo em todas as imagens;
-- Contraste de cores adequado entre texto e plano de fundo;
-- Navegação completa por teclado;
-- Uso do atributo `lang="pt-BR"` em todas as páginas;
-- Atributos ARIA em elementos interativos, quando necessário;
-- Rótulos (`<label for>`) corretamente associados aos campos de formulário.
+## Hospedagem
 
-Detalhes adicionais sobre essas medidas são apresentados na página `acessibilidade.html`.
-
-## Interface e Identidade Visual
-
-A interface busca transmitir uma identidade moderna, limpa e relacionada à sustentabilidade, evitando uma estética infantil ou excessivamente escolar. As diretrizes visuais consideradas incluem:
-
-- Tons de verde e cores naturais;
-- Fundo claro;
-- Tipografia moderna;
-- Uso de cards;
-- Botões bem definidos;
-- Ilustrações ou imagens relacionadas aos temas abordados;
-- Animações sutis;
-- Boa hierarquia visual;
-- Uso moderado de emojis.
-
-## Responsividade
-
-O site é projetado para se adaptar a diferentes tamanhos de tela — celular, tablet e desktop — por meio de técnicas de CSS responsivo.
-
-## Como Executar o Projeto
-
-1. Faça o download ou clone deste repositório;
-2. Abra a pasta do projeto;
-3. Execute o arquivo `index.html` em um navegador de sua preferência.
-
-Não são necessárias instalações adicionais, servidores ou dependências externas.
+Publicado no **Railway** (plano gratuito), no endereço `https://ecovidaproject.up.railway.app`. O comparativo completo de hospedagem e domínio está em `orcamento_hospedagem.html` e em `docs/orcamento-hospedagem-dominio.md`.
 
 ## Documentação (pasta /docs)
 
-Conforme exigido pela Atividade A2, a pasta `docs/` reúne a documentação complementar do projeto:
-
-- **README.md** — este documento, com objetivos, tema e visão geral do projeto;
-- **Diário de bordo** — registro de decisões, aprendizados e dificuldades ao longo do desenvolvimento;
-- **Orçamento de hospedagem/domínio** — comparação entre 3 opções de hospedagem e 3 opções de domínio, com justificativa da escolha;
-- **Evidências de testes** — prints ou descrições da validação do código, da navegação entre páginas e dos testes de acessibilidade.
+- **README.md:** visão geral do projeto;
+- **diario-de-bordo.md:** registro de decisões, aprendizados e dificuldades;
+- **orcamento-hospedagem-dominio.md:** comparação de 3 hospedagens e 3 domínios, com a justificativa da escolha;
+- **evidencias-de-testes/:** prints dos testes realizados (validação do código, navegação, responsividade e acessibilidade).
 
 ## Metodologia de Desenvolvimento
 
-O desenvolvimento segue uma abordagem incremental, iniciando pela definição da estrutura de conteúdo e do fluxo de experiência do usuário, seguida pela implementação da estrutura HTML semântica, estilização com CSS e, por fim, implementação da interatividade com JavaScript nas etapas seguintes do projeto.
-
-## Resultados Esperados
-
-Espera-se que a plataforma proporcione uma experiência capaz de despertar maior reflexão sobre temas de sustentabilidade e impacto social, incentivando os usuários a colocarem em prática pequenas ações em seu cotidiano, ao mesmo tempo em que demonstra a aplicação de boas práticas de desenvolvimento front-end e acessibilidade.
+Desenvolvimento incremental: definição do conteúdo e do fluxo da experiência; página inicial e identidade visual; demais páginas com HTML semântico; interatividade em JavaScript; acessibilidade, testes e publicação.
 
 ## Limitações
 
-- Nesta entrega, a interatividade completa da experiência (seleção dinâmica, quiz funcional e exibição condicional de desafios) depende da implementação de JavaScript, ainda não obrigatória nesta etapa;
-- O projeto não possui backend ou banco de dados, portanto não armazena histórico de respostas ou progresso do usuário entre sessões;
-- Não há sistema de autenticação ou cadastro de usuários;
-- O conjunto de desafios e conteúdos é limitado ao definido durante o desenvolvimento, sem curadoria externa.
+- Não há backend nem banco de dados: o progresso do usuário não é salvo entre sessões (apenas preferências de acessibilidade, no navegador);
+- Não há autenticação nem cadastro; o formulário de contato é demonstrativo e não envia dados;
+- O conjunto de desafios é limitado ao definido no projeto;
+- Dependência de CDNs e conteúdo externo;
+- Estatísticas e valores de hospedagem são referências aproximadas, a serem conferidas nas fontes oficiais.
 
 ## Possíveis Melhorias Futuras
 
-- Implementação completa da lógica interativa em JavaScript (seleção de tempo/área, quiz funcional, exibição dinâmica de desafios);
-- Armazenamento local do progresso do usuário;
-- Expansão do banco de desafios e conteúdos disponíveis;
-- Sistema de conquistas ou gamificação;
-- Compartilhamento de desafios realizados em redes sociais;
-- Backend e banco de dados para persistência de dados entre sessões.
+- Armazenar localmente o progresso e o histórico de desafios;
+- Ampliar o banco de desafios e conteúdos;
+- Sistema de conquistas (gamificação) e compartilhamento em redes sociais;
+- Backend e banco de dados para persistência e envio real do formulário;
+- Conteúdo próprio em áudio e vídeo, com legendas e transcrições;
+- Domínio próprio (por exemplo, `.com.br`).
 
 ## Status do Projeto
 
-Em desenvolvimento — Entrega 01 (Atividade A2), disciplina de Front-End, Curso Superior de Informática, UNICID.
-
-
-
+Entrega 01 (Atividade A2) concluída e publicada — Disciplina de Front-End, Ciência da Computação, UNICID.
