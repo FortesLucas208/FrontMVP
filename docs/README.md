@@ -2,7 +2,8 @@
 
 Site de incentivo e conscientização ambiental, interativo e passivo, que conduz o usuário por **Aprender → Responder → Agir**.
 
-🌐 **Site publicado:** https://ecovidaproject.up.railway.app
+🌐 **Site publicado:** https://ecovidaproject.up.railway.app  
+📦 **Repositório:** https://github.com/FortesLucas208/FrontMVP
 
 ## Autores
 
@@ -122,8 +123,10 @@ Não há backend, banco de dados nem APIs próprias. Por usar CDNs e conteúdo e
 
 ## Estrutura do Projeto
 
+As imagens do site vêm de fontes externas (Unsplash), portanto não há pasta de imagens local.
+
 ```
-impacto-na-pratica/
+FrontMVP/
 ├── index.html
 ├── sobre.html
 ├── projetos.html
@@ -139,9 +142,6 @@ impacto-na-pratica/
 │   └── responsive.css
 ├── js/
 │   └── main.js
-├── img/
-├── assets/
-│   └── icons/
 └── docs/
     ├── README.md
     ├── diario-de-bordo.md
@@ -154,7 +154,7 @@ impacto-na-pratica/
 **Online:** acesse https://ecovidaproject.up.railway.app
 
 **Localmente:**
-1. Baixe ou clone o repositório;
+1. Baixe ou clone o repositório (`git clone https://github.com/FortesLucas208/FrontMVP.git`);
 2. Abra `index.html` em um navegador (de preferência servindo a pasta, por exemplo com `python -m http.server`, para que o vídeo incorporado funcione);
 3. É necessária conexão com a internet para carregar Tailwind, fontes, ícones, imagens, vídeo e mapa.
 
