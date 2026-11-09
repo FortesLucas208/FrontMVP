@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário de contato, dados de contato e apresentação da equipe do projeto.">
+    <title>Contato | EcoVida — Impacto na Prática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    earth: { 100: '#f4f1ea', 200: '#e3dcc8', 800: '#5c5443', 900: '#3e382c' },
+                    leaf: { 50: '#f0faf3', 100: '#d8f3dc', 500: '#2d6a4f', 600: '#1b4332', 700: '#081c15' }
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" aria-current="page">Contato</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Contato</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main id="conteudo" class="pb-0">
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-leaf-700 via-leaf-600 to-leaf-500 text-white overflow-hidden">
+        <i class="ph-fill ph-envelope-simple absolute -right-6 -bottom-10 text-[220px] text-white/10" aria-hidden="true"></i>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Você está em" class="text-sm text-green-200 mb-4">
+                <ol class="flex items-center gap-2"><li><a href="index.html" class="hover:underline">Início</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-white font-semibold">Contato</li></ol>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Fale com a gente</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-3xl">Dúvidas, sugestões ou relato de barreiras de acessibilidade? Escreva para a equipe.</p>
+        </div>
+    </section>
+<section class="py-20 bg-earth-100" aria-labelledby="form-titulo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10">
+
+            <div class="lg:col-span-2 bg-white rounded-3xl shadow-lg p-8 md:p-10">
+                <h2 id="form-titulo" class="text-3xl font-bold text-leaf-700 mb-2">Envie sua mensagem</h2>
+                <p class="text-earth-800 mb-6">Campos marcados com <span class="text-red-700 font-bold" aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios. Este formulário é demonstrativo: nenhum dado é enviado.</p>
+
+                <form id="form-contato" action="#" method="get" class="grid sm:grid-cols-2 gap-6">
+                    <div class="sm:col-span-2">
+                        <label for="nome" class="block font-semibold mb-2">Nome completo <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <input type="text" id="nome" name="nome" required minlength="3" maxlength="80" autocomplete="name" placeholder="Maria da Silva" class="w-full border-2 border-earth-200 rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block font-semibold mb-2">E-mail <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="voce@exemplo.com" class="w-full border-2 border-earth-200 rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label for="telefone" class="block font-semibold mb-2">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="\(?\d{2}\)?\s?9?\d{4}-?\d{4}" autocomplete="tel" placeholder="(11) 91234-5678" aria-describedby="tel-ajuda" class="w-full border-2 border-earth-200 rounded-xl px-4 py-3">
+                        <p id="tel-ajuda" class="text-sm text-earth-800 mt-1">Formato: (11) 91234-5678</p>
+                    </div>
+
+                    <div>
+                        <label for="nascimento" class="block font-semibold mb-2">Data de nascimento</label>
+                        <input type="date" id="nascimento" name="nascimento" min="1900-01-01" max="2026-12-31" autocomplete="bday" class="w-full border-2 border-earth-200 rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label for="idade-tempo" class="block font-semibold mb-2">Minutos livres por dia para ações sustentáveis</label>
+                        <input type="number" id="idade-tempo" name="minutos" min="0" max="480" step="5" value="15" class="w-full border-2 border-earth-200 rounded-xl px-4 py-3">
+                    </div>
+
+                    <div>
+                        <label for="assunto" class="block font-semibold mb-2">Assunto <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <select id="assunto" name="assunto" required class="w-full border-2 border-earth-200 rounded-xl px-4 py-3 bg-white">
+                            <option value="">Selecione...</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão de desafio</option>
+                            <option value="acessibilidade">Barreira de acessibilidade</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="sm:col-span-1">
+                        <legend class="block font-semibold mb-2">Área de interesse</legend>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3"><input type="radio" name="area" value="reciclagem" class="w-5 h-5 accent-green-800"> Reciclagem</label>
+                            <label class="flex items-center gap-3"><input type="radio" name="area" value="agua" class="w-5 h-5 accent-green-800"> Economia de água</label>
+                            <label class="flex items-center gap-3"><input type="radio" name="area" value="social" class="w-5 h-5 accent-green-800"> Impacto social</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="sm:col-span-2">
+                        <label for="mensagem" class="block font-semibold mb-2">Mensagem <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required minlength="10" maxlength="1000" placeholder="Escreva aqui..." class="w-full border-2 border-earth-200 rounded-xl px-4 py-3"></textarea>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label class="flex items-start gap-3"><input type="checkbox" name="aceite" required class="w-5 h-5 mt-0.5 accent-green-800"> <span>Concordo em ser contatado(a) sobre esta mensagem. <span class="text-red-700" aria-hidden="true">*</span></span></label>
+                    </div>
+
+                    <div class="sm:col-span-2 flex flex-wrap gap-3">
+                        <button type="submit" class="bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg inline-flex items-center gap-2"><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i> Enviar mensagem</button>
+                        <button type="reset" class="bg-earth-100 hover:bg-earth-200 font-semibold px-8 py-4 rounded-full">Limpar</button>
+                    </div>
+                </form>
+
+                <p id="form-ok" class="hidden mt-6 bg-green-100 border-2 border-leaf-500 text-leaf-600 rounded-xl p-4 font-semibold" role="status" tabindex="-1">Obrigado! Sua mensagem foi registrada (demonstração — nada foi enviado).</p>
+            </div>
+
+            <aside class="space-y-6" aria-label="Dados de contato">
+                <div class="bg-leaf-600 text-white rounded-3xl p-8">
+                    <h2 class="text-xl font-bold mb-5">Dados de contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3"><i class="ph ph-envelope-simple text-2xl text-green-300" aria-hidden="true"></i><span>contato@ecovida.com.br</span></li>
+                        <li class="flex gap-3"><i class="ph ph-phone text-2xl text-green-300" aria-hidden="true"></i><span>(11) 4000-0000</span></li>
+                        <li class="flex gap-3"><i class="ph ph-map-pin text-2xl text-green-300" aria-hidden="true"></i><span>Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                        <li class="flex gap-3"><i class="ph ph-clock text-2xl text-green-300" aria-hidden="true"></i><span>Seg. a sex., 9h às 18h</span></li>
+                    </ul>
+                    <p class="text-xs text-green-100 mt-5">Dados fictícios, para fins acadêmicos.</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" aria-labelledby="equipe">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 id="equipe" class="text-3xl md:text-4xl font-bold text-leaf-700 mb-4">Quem fez este projeto</h2>
+                <div class="h-1 w-20 bg-leaf-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-earth-800 text-lg">Alunos de Ciência da Computação da UNICID — Universidade Cidade de São Paulo, disciplina de Desenvolvimento Front-End para Web.</p>
+            </div>
+            <ul class="grid md:grid-cols-3 gap-8">
+                <li class="bg-earth-100 rounded-2xl p-8 text-center shadow-sm">
+                    <div class="w-20 h-20 rounded-full bg-leaf-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4" aria-hidden="true">FB</div>
+                    <h3 class="font-bold text-lg">Felipe Piazza Bononi</h3>
+                    <p class="text-earth-800 text-sm">RGM 47349361</p>
+                </li>
+                <li class="bg-earth-100 rounded-2xl p-8 text-center shadow-sm">
+                    <div class="w-20 h-20 rounded-full bg-leaf-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4" aria-hidden="true">LM</div>
+                    <h3 class="font-bold text-lg">Lucas Fortes de Melo</h3>
+                    <p class="text-earth-800 text-sm">RGM 46761977</p>
+                </li>
+                <li class="bg-earth-100 rounded-2xl p-8 text-center shadow-sm">
+                    <div class="w-20 h-20 rounded-full bg-leaf-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4" aria-hidden="true">VM</div>
+                    <h3 class="font-bold text-lg">Vinicius Passos Macedo</h3>
+                    <p class="text-earth-800 text-sm">RGM 47116871</p>
+                </li>
+            </ul>
+            <p class="text-center text-earth-800 mt-10"><strong>Professor orientador:</strong> Paulo Sergio Fratta Junior</p>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        const f = document.getElementById('form-contato'), ok = document.getElementById('form-ok');
+        f.addEventListener('submit', e => { e.preventDefault(); f.reset(); ok.classList.remove('hidden'); ok.focus(); });
+        f.addEventListener('reset', () => ok.classList.add('hidden'));
+    })();
+    </script>
+
+    </main>
+
+    <footer class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-green-300" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">Projeto <strong class="text-white">Impacto na Prática</strong>: aprender, responder e agir. Nossa missão é transformar informação sobre sustentabilidade em pequenas ações reais.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-twitter-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-facebook-logo text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Mapa do site">
+                    <h2 class="text-white font-bold text-lg mb-4">Navegação</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="text-white font-bold text-lg mb-4">Contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="ph ph-envelope-simple text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">contato@ecovida.com.br</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-map-pin text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/70 text-sm">
+                <p>&copy; <span id="current-year">2026</span> EcoVida — Impacto na Prática. Projeto acadêmico · UNICID · Atividade A2.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

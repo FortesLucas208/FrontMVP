@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Escolha quanto tempo você tem e uma área de interesse: aprenda, responda ao quiz e realize um desafio prático.">
+    <title>Desafios | EcoVida — Impacto na Prática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    earth: { 100: '#f4f1ea', 200: '#e3dcc8', 800: '#5c5443', 900: '#3e382c' },
+                    leaf: { 50: '#f0faf3', 100: '#d8f3dc', 500: '#2d6a4f', 600: '#1b4332', 700: '#081c15' }
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-leaf-500 font-bold font-medium transition-colors duration-200 whitespace-nowrap" aria-current="page">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main id="conteudo" class="pb-0">
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-leaf-700 via-leaf-600 to-leaf-500 text-white overflow-hidden">
+        <i class="ph-fill ph-rocket-launch absolute -right-6 -bottom-10 text-[220px] text-white/10" aria-hidden="true"></i>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Você está em" class="text-sm text-green-200 mb-4">
+                <ol class="flex items-center gap-2"><li><a href="index.html" class="hover:underline">Início</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-white font-semibold">Desafios</li></ol>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Quanto tempo você tem para causar um impacto?</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-3xl">Escolha o seu tempo e uma área de interesse. Nós cuidamos do resto: contexto, quiz e um desafio do tamanho certo.</p>
+        </div>
+    </section>
+<section class="py-16 bg-earth-100" aria-labelledby="como">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="como" class="text-3xl font-bold text-leaf-700 text-center mb-3">Como funciona</h2>
+            <p class="text-center text-earth-800 mb-10 max-w-2xl mx-auto">Todo desafio segue as mesmas quatro etapas.</p>
+            <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <li class="bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-full bg-leaf-500 text-white flex items-center justify-center font-bold">1</span><i class="ph ph-book-open-text text-2xl text-leaf-500" aria-hidden="true"></i></div>
+                    <h3 class="font-bold text-lg mb-1">Contextualização</h3>
+                    <p class="text-earth-800 text-sm">Entenda o problema, as consequências e por que ele importa.</p>
+                </li>
+                <li class="bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-full bg-leaf-500 text-white flex items-center justify-center font-bold">2</span><i class="ph ph-question text-2xl text-leaf-500" aria-hidden="true"></i></div>
+                    <h3 class="font-bold text-lg mb-1">Quiz</h3>
+                    <p class="text-earth-800 text-sm">Uma pergunta para refletir antes de agir.</p>
+                </li>
+                <li class="bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-full bg-leaf-500 text-white flex items-center justify-center font-bold">3</span><i class="ph ph-hand-heart text-2xl text-leaf-500" aria-hidden="true"></i></div>
+                    <h3 class="font-bold text-lg mb-1">Desafio prático</h3>
+                    <p class="text-earth-800 text-sm">Uma ação simples e realista, compatível com seu tempo.</p>
+                </li>
+                <li class="bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-full bg-leaf-500 text-white flex items-center justify-center font-bold">4</span><i class="ph ph-globe-hemisphere-west text-2xl text-leaf-500" aria-hidden="true"></i></div>
+                    <h3 class="font-bold text-lg mb-1">Impacto</h3>
+                    <p class="text-earth-800 text-sm">Veja como sua atitude individual vira impacto coletivo.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="experiencia" class="py-20 bg-white" aria-labelledby="exp-titulo">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="exp-titulo" class="text-3xl md:text-4xl font-bold text-leaf-700 text-center mb-12">Monte o seu desafio</h2>
+
+            <noscript>
+                <p class="bg-amber-100 border border-amber-400 text-amber-900 rounded-xl p-4 mb-8">Esta área usa JavaScript para montar o desafio. Sem ele, você pode consultar todos os temas na página <a href="impacto.html" class="underline font-semibold">Impacto</a> e nas <a href="noticias.html" class="underline font-semibold">Notícias</a>.</p>
+            </noscript>
+
+            <!-- Passo 1 -->
+            <div role="group" aria-labelledby="g-tempo" class="mb-10">
+                <h3 id="g-tempo" class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-leaf-500 text-white inline-flex items-center justify-center text-sm">1</span> Quanto tempo você tem?</h3>
+                <div class="grid sm:grid-cols-3 gap-4" id="tempo-grid">
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-tempo="5" aria-pressed="false">
+                        <i class="ph ph-timer text-3xl" aria-hidden="true"></i>
+                        <span class="block font-bold text-lg mt-2">5 minutos</span>
+                        <span class="choice-sub block text-sm text-earth-800">Uma ação rápida, agora mesmo</span>
+                    </button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-tempo="15" aria-pressed="false">
+                        <i class="ph ph-clock text-3xl" aria-hidden="true"></i>
+                        <span class="block font-bold text-lg mt-2">15 minutos</span>
+                        <span class="choice-sub block text-sm text-earth-800">Um pouco mais de dedicação</span>
+                    </button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-tempo="30" aria-pressed="false">
+                        <i class="ph ph-hourglass-medium text-3xl" aria-hidden="true"></i>
+                        <span class="block font-bold text-lg mt-2">30 minutos ou mais</span>
+                        <span class="choice-sub block text-sm text-earth-800">Um desafio mais completo</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Passo 2 -->
+            <div role="group" aria-labelledby="g-area" class="mb-10">
+                <h3 id="g-area" class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-leaf-500 text-white inline-flex items-center justify-center text-sm">2</span> Qual área te interessa?</h3>
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-4" id="area-grid">
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-area="reciclagem" aria-pressed="false"><i class="ph ph-recycle text-3xl" aria-hidden="true"></i><span class="block font-bold mt-2">Reciclagem</span></button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-area="agua" aria-pressed="false"><i class="ph ph-drop text-3xl" aria-hidden="true"></i><span class="block font-bold mt-2">Economia de água</span></button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-area="consumo" aria-pressed="false"><i class="ph ph-shopping-bag text-3xl" aria-hidden="true"></i><span class="block font-bold mt-2">Consumo consciente</span></button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500" data-area="alimentos" aria-pressed="false"><i class="ph ph-carrot text-3xl" aria-hidden="true"></i><span class="block font-bold mt-2">Desperdício de alimentos</span></button>
+                    <button type="button" class="choice text-left bg-earth-100 border-2 border-earth-200 rounded-2xl p-5 hover:border-leaf-500 col-span-2 lg:col-span-1" data-area="social" aria-pressed="false"><i class="ph ph-users-three text-3xl" aria-hidden="true"></i><span class="block font-bold mt-2">Impacto social</span></button>
+                </div>
+            </div>
+
+            <p id="aviso-escolha" class="text-center text-earth-800 bg-earth-100 rounded-xl p-4">Escolha o tempo e a área para começar.</p>
+
+            <!-- Experiência -->
+            <div id="painel" class="hidden space-y-8" aria-live="polite">
+                <ol class="flex items-center justify-between text-xs sm:text-sm font-semibold text-earth-800" aria-label="Progresso">
+                    <li class="step flex-1 text-center" data-step="1"><span class="block h-2 rounded-full bg-earth-200 mb-2"></span>Contexto</li>
+                    <li class="step flex-1 text-center px-1" data-step="2"><span class="block h-2 rounded-full bg-earth-200 mb-2"></span>Quiz</li>
+                    <li class="step flex-1 text-center px-1" data-step="3"><span class="block h-2 rounded-full bg-earth-200 mb-2"></span>Desafio</li>
+                    <li class="step flex-1 text-center" data-step="4"><span class="block h-2 rounded-full bg-earth-200 mb-2"></span>Impacto</li>
+                </ol>
+
+                <article class="bg-earth-100 rounded-3xl p-8 fade-in" aria-labelledby="t-ctx">
+                    <p class="text-sm font-bold uppercase tracking-wider text-leaf-500 mb-2" id="ctx-tag"></p>
+                    <h3 id="t-ctx" class="text-2xl font-bold mb-3 flex items-center gap-3"><i class="ph ph-book-open-text text-leaf-500" aria-hidden="true"></i> Contextualização</h3>
+                    <p id="ctx-text" class="text-lg text-earth-800"></p>
+                </article>
+
+                <article class="bg-earth-100 rounded-3xl p-8 fade-in" aria-labelledby="t-quiz">
+                    <h3 id="t-quiz" class="text-2xl font-bold mb-3 flex items-center gap-3"><i class="ph ph-question text-leaf-500" aria-hidden="true"></i> Quiz</h3>
+                    <p id="quiz-q" class="text-lg font-semibold mb-4"></p>
+                    <div id="quiz-opts" class="grid gap-3" role="group" aria-labelledby="quiz-q"></div>
+                    <p id="quiz-fb" class="hidden mt-5 p-4 rounded-xl bg-white border border-earth-200 text-earth-900" role="status"></p>
+                </article>
+
+                <article id="card-desafio" class="hidden bg-leaf-500 text-white rounded-3xl p-8 fade-in" aria-labelledby="t-des">
+                    <h3 id="t-des" class="text-2xl font-bold mb-3 flex items-center gap-3"><i class="ph ph-hand-heart" aria-hidden="true"></i> Seu desafio <span id="des-tempo" class="text-sm font-semibold bg-white/20 rounded-full px-3 py-1"></span></h3>
+                    <p id="des-text" class="text-lg mb-6"></p>
+                    <button type="button" id="btn-feito" class="bg-white text-leaf-600 hover:bg-leaf-100 font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"><i class="ph ph-check-circle text-xl" aria-hidden="true"></i> Concluí o desafio</button>
+                </article>
+
+                <article id="card-impacto" class="hidden bg-amber-50 border-2 border-amber-300 rounded-3xl p-8 fade-in" aria-labelledby="t-imp">
+                    <h3 id="t-imp" class="text-2xl font-bold mb-3 flex items-center gap-3"><i class="ph ph-globe-hemisphere-west text-amber-700" aria-hidden="true"></i> Por que isso importa</h3>
+                    <p id="imp-text" class="text-lg text-earth-900 mb-6"></p>
+                    <div class="flex flex-wrap gap-3">
+                        <button type="button" id="btn-outro" class="bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2"><i class="ph ph-arrows-clockwise" aria-hidden="true"></i> Fazer outro desafio</button>
+                        <a href="impacto.html" class="bg-white border border-earth-200 hover:bg-earth-100 font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">Ver o impacto coletivo <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        const AREAS = {
+            reciclagem: {
+                nome: 'Reciclagem',
+                contexto: 'Separar o lixo reciclável do orgânico é o primeiro passo da coleta seletiva. Quando embalagens chegam sujas de comida ou misturadas a resíduos úmidos, parte do material se contamina e acaba indo para o aterro em vez de voltar à cadeia produtiva. Cooperativas de catadores dependem de material limpo e separado para trabalhar.',
+                quiz: { q: 'Qual destes itens normalmente NÃO deve ir para a reciclagem de papel?', o: ['Caixa de papelão limpa', 'Jornal', 'Guardanapo engordurado', 'Folha de caderno'], c: 2, e: 'Papel contaminado por gordura ou comida geralmente não é aproveitado na reciclagem e deve ir para o lixo comum (ou, se for só restos orgânicos, para a compostagem).' },
+                d: { 5: 'Pegue um cesto ou caixa e comece a juntar, separadas do lixo comum, as embalagens secas de plástico, papel, metal e vidro que você tem agora em casa.', 15: 'Enxágue rapidamente as embalagens com restos de comida, deixe secar e separe-as por tipo (papel, plástico, metal e vidro). Dica: use a água da louça para o enxágue.', 30: 'Monte um cantinho fixo de reciclagem em casa e pesquise no seu bairro o ponto de entrega voluntária ou a cooperativa de coleta seletiva mais próxima. Anote o dia e o local.' },
+                impacto: 'Cada embalagem que volta para a cadeia produtiva reduz a extração de matéria-prima e o volume enviado aos aterros. Quando a separação vira hábito de um bairro inteiro, as cooperativas recebem mais material de qualidade e ganham renda.'
+            },
+            agua: {
+                nome: 'Economia de água',
+                contexto: 'Pequenos vazamentos passam despercebidos, mas somam muito ao longo do dia: uma torneira pingando ou uma descarga com defeito podem desperdiçar dezenas de litros por dia, e o problema só aparece na conta. Em um país com crises hídricas recorrentes, cada litro poupado conta.',
+                quiz: { q: 'Qual destes hábitos economiza mais água?', o: ['Escovar os dentes com a torneira aberta', 'Tomar banhos mais curtos', 'Lavar a calçada com mangueira', 'Deixar a torneira pingando'], c: 1, e: 'Reduzir o tempo do banho diminui o consumo diário de forma direta. As outras opções são justamente exemplos de desperdício.' },
+                d: { 5: 'Percorra a casa e confira torneiras, chuveiros e mangueiras: há algum pingo? Feche bem cada torneira e anote o que precisa de reparo.', 15: 'Faça o teste da descarga: coloque algumas gotas de corante (ou pó de café) na caixa acoplada, não dê descarga por 10 minutos e veja se a cor aparece na bacia. Se aparecer, há vazamento.', 30: 'Faça um mapa de consumo da sua casa (banho, louça, roupa, limpeza), escolha uma mudança para esta semana e arrume ao menos um vazamento. Reaproveite a água da máquina de lavar para limpar quintal ou varanda.' },
+                impacto: 'Reparar um vazamento e encurtar o banho reduzem a conta e a pressão sobre os mananciais. Multiplicado por milhares de casas, o efeito é equivalente a poupar reservatórios inteiros em períodos de estiagem.'
+            },
+            consumo: {
+                nome: 'Consumo consciente',
+                contexto: 'Todo produto tem uma história: extração de recursos, produção, transporte e descarte. Consumir de forma consciente não significa nunca comprar, mas perguntar se há alternativa — reaproveitar, consertar, emprestar ou comprar de segunda mão — antes de adquirir algo novo.',
+                quiz: { q: 'Antes de comprar algo novo, qual é a pergunta mais útil?', o: ['Está em promoção?', 'Eu preciso mesmo disso, ou posso consertar, reaproveitar ou pegar emprestado?', 'Todo mundo está comprando?', 'A embalagem é bonita?'], c: 1, e: 'Questionar a necessidade e as alternativas é o centro do consumo consciente: o melhor produto para o ambiente costuma ser o que já existe.' },
+                d: { 5: 'Abra seu carrinho de compras ou lista de desejos e remova um item que você não precisa de verdade. Espere 48 horas antes de decidir comprar o restante.', 15: 'Escolha um objeto parado em casa e decida o que fazer com ele: usar de outro jeito, consertar ou doar. Se for consertar, procure um tutorial ou profissional.', 30: 'Faça uma mini triagem em um armário ou gaveta: separe pelo menos cinco itens para doar, trocar ou vender e combine o destino ainda hoje.' },
+                impacto: 'Prolongar a vida útil dos objetos reduz a demanda por novos recursos e a geração de lixo. Escolhas conscientes também influenciam o que as empresas decidem produzir.'
+            },
+            alimentos: {
+                nome: 'Desperdício de alimentos',
+                contexto: 'Segundo a FAO (Organização das Nações Unidas para Alimentação e Agricultura), cerca de um terço dos alimentos produzidos no mundo é perdido ou desperdiçado. Isso significa água, energia, terra e trabalho gastos à toa — e alimento jogado fora enquanto muita gente passa fome.',
+                quiz: { q: 'Qual prática ajuda a reduzir o desperdício de comida em casa?', o: ['Comprar muito, sem lista', 'Planejar as refeições e usar primeiro o que vence antes', 'Descartar tudo o que está perto da validade', 'Cozinhar sempre em excesso'], c: 1, e: 'Planejar e organizar a geladeira pelo prazo de validade evita que o alimento estrague antes de ser consumido.' },
+                d: { 5: 'Abra a geladeira e a despensa e coloque na frente o que vence primeiro. Escolha o que será consumido hoje.', 15: 'Planeje três refeições da semana usando o que você já tem em casa e anote o que realmente precisa comprar.', 30: 'Cozinhe uma receita de aproveitamento integral (com talos, folhas ou cascas) ou prepare e congele porções do que está prestes a estragar.' },
+                impacto: 'Aproveitar o alimento economiza dinheiro e evita que resíduos orgânicos virem gases de efeito estufa nos aterros. Em escala, reduz a pressão sobre a produção agrícola.'
+            },
+            social: {
+                nome: 'Impacto social',
+                contexto: 'Sustentabilidade também é sobre pessoas. Iniciativas locais, ONGs, coletivos e ações de voluntariado dependem de gente disposta a contribuir, seja com tempo, divulgação, doações ou habilidades. Pequenas contribuições, quando constantes, fortalecem a comunidade.',
+                quiz: { q: 'Qual ação gera impacto social mesmo quando você tem pouco tempo?', o: ['Esperar ter tempo livre de sobra', 'Conhecer e divulgar uma iniciativa local confiável', 'Esperar que outra pessoa resolva', 'Não fazer nada para não errar'], c: 1, e: 'Divulgar, doar ou apoiar uma iniciativa séria exige poucos minutos e amplia o alcance de quem já está atuando.' },
+                d: { 5: 'Pesquise uma iniciativa ou ONG do seu bairro ou cidade e compartilhe o contato com uma pessoa próxima.', 15: 'Separe roupas, livros ou itens em bom estado para doação e descubra onde e quando uma instituição confiável recebe doações.', 30: 'Entre em contato com uma organização (por e-mail ou redes sociais) e pergunte como participar como voluntário ou o que está precisando no momento.' },
+                impacto: 'Ações comunitárias criam redes de apoio e ampliam o acesso a direitos e oportunidades. Quando muita gente contribui um pouco, a soma é grande.'
+            }
+        };
+        const TEMPOS = { 5: '5 min', 15: '15 min', 30: '30 min ou mais' };
+
+        const $ = id => document.getElementById(id);
+        const state = { tempo: null, area: null };
+        let answered = false;
+
+        const tempoBtns = document.querySelectorAll('[data-tempo]');
+        const areaBtns = document.querySelectorAll('[data-area]');
+
+        function setSteps(n) {
+            document.querySelectorAll('.step').forEach(li => {
+                const s = Number(li.dataset.step);
+                li.firstElementChild.className = 'block h-2 rounded-full mb-2 ' + (s <= n ? 'bg-leaf-500' : 'bg-earth-200');
+                li.classList.toggle('text-leaf-500', s <= n);
+            });
+        }
+
+        function pick(btns, attr, value) {
+            btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset[attr] === String(value))));
+        }
+
+        function render() {
+            if (!state.tempo || !state.area) return;
+            const a = AREAS[state.area];
+            answered = false;
+            $('aviso-escolha').classList.add('hidden');
+            $('painel').classList.remove('hidden');
+            $('ctx-tag').textContent = a.nome;
+            $('ctx-text').textContent = a.contexto;
+            $('quiz-q').textContent = a.quiz.q;
+            $('quiz-fb').classList.add('hidden');
+            $('card-desafio').classList.add('hidden');
+            $('card-impacto').classList.add('hidden');
+            const box = $('quiz-opts');
+            box.innerHTML = '';
+            a.quiz.o.forEach((txt, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'quiz-opt text-left bg-white border-2 border-earth-200 rounded-xl px-5 py-4 font-medium hover:border-leaf-500 transition-colors';
+                b.textContent = txt;
+                b.addEventListener('click', () => answer(i, b));
+                box.appendChild(b);
+            });
+            setSteps(2);
+        }
+
+        function answer(i, btn) {
+            if (answered) return;
+            answered = true;
+            const a = AREAS[state.area];
+            const ok = i === a.quiz.c;
+            const opts = $('quiz-opts').children;
+            btn.classList.add(ok ? 'correct' : 'wrong');
+            if (!ok) opts[a.quiz.c].classList.add('correct');
+            [...opts].forEach(o => o.disabled = true);
+            const fb = $('quiz-fb');
+            fb.textContent = (ok ? 'Isso mesmo! ' : 'Quase! ') + a.quiz.e;
+            fb.classList.remove('hidden');
+            $('des-tempo').textContent = TEMPOS[state.tempo];
+            $('des-text').textContent = a.d[state.tempo];
+            $('card-desafio').classList.remove('hidden');
+            setSteps(3);
+            $('card-desafio').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        $('btn-feito').addEventListener('click', () => {
+            $('imp-text').textContent = AREAS[state.area].impacto;
+            $('card-impacto').classList.remove('hidden');
+            setSteps(4);
+            $('card-impacto').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            $('t-imp').setAttribute('tabindex', '-1');
+            $('t-imp').focus({ preventScroll: true });
+        });
+
+        $('btn-outro').addEventListener('click', () => {
+            state.tempo = null; state.area = null;
+            pick(tempoBtns, 'tempo', null); pick(areaBtns, 'area', null);
+            $('painel').classList.add('hidden');
+            $('aviso-escolha').classList.remove('hidden');
+            $('exp-titulo').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        tempoBtns.forEach(b => b.addEventListener('click', () => { state.tempo = b.dataset.tempo; pick(tempoBtns, 'tempo', state.tempo); render(); }));
+        areaBtns.forEach(b => b.addEventListener('click', () => { state.area = b.dataset.area; pick(areaBtns, 'area', state.area); render(); }));
+
+        // Permite chegar da página inicial com ?tempo=15&area=agua
+        const q = new URLSearchParams(location.search);
+        if (TEMPOS[q.get('tempo')]) { state.tempo = q.get('tempo'); pick(tempoBtns, 'tempo', state.tempo); }
+        if (AREAS[q.get('area')]) { state.area = q.get('area'); pick(areaBtns, 'area', state.area); }
+        if (state.tempo && state.area) render();
+        if (state.tempo && !state.area) $('aviso-escolha').textContent = 'Agora escolha uma área de interesse.';
+    })();
+    </script>
+
+    </main>
+
+    <footer class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-green-300" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">Projeto <strong class="text-white">Impacto na Prática</strong>: aprender, responder e agir. Nossa missão é transformar informação sobre sustentabilidade em pequenas ações reais.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-twitter-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-facebook-logo text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Mapa do site">
+                    <h2 class="text-white font-bold text-lg mb-4">Navegação</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="text-white font-bold text-lg mb-4">Contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="ph ph-envelope-simple text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">contato@ecovida.com.br</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-map-pin text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/70 text-sm">
+                <p>&copy; <span id="current-year">2026</span> EcoVida — Impacto na Prática. Projeto acadêmico · UNICID · Atividade A2.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

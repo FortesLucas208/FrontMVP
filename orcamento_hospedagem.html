@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Relatório comparativo de opções de hospedagem e domínio consideradas para o projeto.">
+    <title>Orçamento de hospedagem | EcoVida — Impacto na Prática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    earth: { 100: '#f4f1ea', 200: '#e3dcc8', 800: '#5c5443', 900: '#3e382c' },
+                    leaf: { 50: '#f0faf3', 100: '#d8f3dc', 500: '#2d6a4f', 600: '#1b4332', 700: '#081c15' }
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-leaf-500 font-bold font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 font-bold text-leaf-500" aria-current="page"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main id="conteudo" class="pb-0">
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-leaf-700 via-leaf-600 to-leaf-500 text-white overflow-hidden">
+        <i class="ph-fill ph-currency-circle-dollar absolute -right-6 -bottom-10 text-[220px] text-white/10" aria-hidden="true"></i>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Você está em" class="text-sm text-green-200 mb-4">
+                <ol class="flex items-center gap-2"><li><a href="index.html" class="hover:underline">Início</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-white font-semibold">Orçamento de hospedagem</li></ol>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Orçamento de hospedagem e domínio</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-3xl">Comparamos 3 opções de hospedagem e 3 opções de domínio para publicar o EcoVida.</p>
+        </div>
+    </section>
+<section class="py-16 bg-earth-100" aria-labelledby="premissas">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="premissas" class="text-3xl font-bold text-leaf-700 mb-4">Premissas do projeto</h2>
+            <p class="text-earth-800 text-lg mb-6">O site é <strong>estático</strong> (HTML, CSS e JavaScript no navegador), sem backend nem banco de dados. Isso reduz bastante a necessidade de recursos de servidor e permite opções gratuitas ou de baixo custo.</p>
+            <p class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4 text-earth-900" role="note"><strong>Atenção:</strong> os valores abaixo são <strong>faixas estimadas</strong> para comparação acadêmica, sujeitas a promoções e reajustes. Confirme os preços nos sites oficiais antes de decidir.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" aria-labelledby="hosp">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="hosp" class="text-3xl font-bold text-leaf-700 mb-8 flex items-center gap-3"><i class="ph ph-hard-drives text-leaf-500" aria-hidden="true"></i> Opções de hospedagem</h2>
+            <div class="table-wrap rounded-2xl border border-earth-200">
+                <table class="text-left">
+                    <caption class="sr-only">Comparação entre três opções de hospedagem</caption>
+                    <thead class="bg-leaf-600 text-white">
+                        <tr><th scope="col" class="p-4">Critério</th><th scope="col" class="p-4">A · GitHub Pages</th><th scope="col" class="p-4">B · Hospedagem compartilhada (ex.: Hostinger)</th><th scope="col" class="p-4">C · Hospedagem nacional (ex.: Locaweb)</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-earth-200">
+                        <tr><th scope="row" class="p-4 font-semibold">Custo estimado</th><td class="p-4">Gratuito</td><td class="p-4">≈ R$ 10–25/mês</td><td class="p-4">≈ R$ 15–35/mês</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Tipo de site</th><td class="p-4">Somente estático</td><td class="p-4">Estático e dinâmico (PHP, banco)</td><td class="p-4">Estático e dinâmico (PHP, banco)</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">HTTPS</th><td class="p-4">Incluso</td><td class="p-4">Incluso (certificado gratuito)</td><td class="p-4">Incluso ou opcional</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Domínio próprio</th><td class="p-4">Sim (configuração manual)</td><td class="p-4">Sim (às vezes gratuito no 1º ano)</td><td class="p-4">Sim</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Suporte</th><td class="p-4">Documentação e comunidade</td><td class="p-4">Chat 24h</td><td class="p-4">Suporte em português</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Facilidade</th><td class="p-4">Publicação via Git</td><td class="p-4">Painel com upload de arquivos</td><td class="p-4">Painel com upload de arquivos</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Pontos fortes</th><td class="p-4">Custo zero, versionamento, estável</td><td class="p-4">Flexível para crescer</td><td class="p-4">Servidores e suporte no Brasil</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Pontos fracos</th><td class="p-4">Sem backend próprio</td><td class="p-4">Preço promocional sobe na renovação</td><td class="p-4">Custo mais alto para pouco uso</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-earth-100" aria-labelledby="dom">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="dom" class="text-3xl font-bold text-leaf-700 mb-8 flex items-center gap-3"><i class="ph ph-globe text-leaf-500" aria-hidden="true"></i> Opções de domínio</h2>
+            <div class="table-wrap rounded-2xl border border-earth-200 bg-white">
+                <table class="text-left">
+                    <caption class="sr-only">Comparação entre três opções de domínio</caption>
+                    <thead class="bg-leaf-600 text-white">
+                        <tr><th scope="col" class="p-4">Critério</th><th scope="col" class="p-4">1 · ecovida.com.br</th><th scope="col" class="p-4">2 · ecovida.com</th><th scope="col" class="p-4">3 · ecovida.eco</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-earth-200">
+                        <tr><th scope="row" class="p-4 font-semibold">Registro</th><td class="p-4">Registro.br</td><td class="p-4">Registradores internacionais</td><td class="p-4">Registradores internacionais</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Custo estimado</th><td class="p-4">≈ R$ 40/ano</td><td class="p-4">≈ R$ 60–100/ano</td><td class="p-4">Acima de ≈ R$ 150/ano</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Identidade</th><td class="p-4">Foco no público brasileiro</td><td class="p-4">Global e conhecido</td><td class="p-4">Reforça o tema ambiental</td></tr>
+                        <tr class="bg-earth-100/60"><th scope="row" class="p-4 font-semibold">Observações</th><td class="p-4">Exige CPF/CNPJ</td><td class="p-4">Pode já estar registrado</td><td class="p-4">Extensão mais cara e menos usada</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-earth-800 mt-4">Verifique a disponibilidade do nome desejado no registrador antes de decidir.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" aria-labelledby="rec">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="rec" class="text-3xl font-bold text-leaf-700 mb-8 flex items-center gap-3"><i class="ph ph-check-circle text-leaf-500" aria-hidden="true"></i> Escolha recomendada</h2>
+            <div class="bg-leaf-50 border-2 border-leaf-500 rounded-3xl p-8">
+                <p class="text-lg mb-4"><strong>Hospedagem A (GitHub Pages) + domínio 1 (.com.br)</strong></p>
+                <ul class="list-disc list-inside space-y-2 text-earth-800 mb-6">
+                    <li><strong>Custo total estimado:</strong> ≈ R$ 40 por ano (apenas o domínio).</li>
+                    <li><strong>Adequação técnica:</strong> o site é estático, então não exige servidor com banco de dados.</li>
+                    <li><strong>Boas práticas:</strong> HTTPS incluso e histórico de versões com Git.</li>
+                    <li><strong>Evolução:</strong> se o projeto passar a precisar de backend (por exemplo, salvar o progresso dos usuários), migramos para a opção B ou C sem mudar o domínio.</li>
+                </ul>
+                <p class="text-sm font-semibold mb-2">Comparativo de custo anual estimado (hospedagem + domínio)</p>
+                <div class="space-y-3" role="img" aria-label="Gráfico de barras: A mais domínio 1, aproximadamente 40 reais por ano; B mais domínio 2, entre 180 e 400 reais por ano; C mais domínio 2, entre 240 e 520 reais por ano.">
+                    <div><div class="flex justify-between text-sm"><span>A + .com.br</span><span>≈ R$ 40</span></div><div class="h-4 bg-earth-200 rounded-full"><div class="h-4 bg-leaf-500 rounded-full" style="width:8%"></div></div></div>
+                    <div><div class="flex justify-between text-sm"><span>B + .com</span><span>≈ R$ 180–400</span></div><div class="h-4 bg-earth-200 rounded-full"><div class="h-4 bg-amber-500 rounded-full" style="width:77%"></div></div></div>
+                    <div><div class="flex justify-between text-sm"><span>C + .com</span><span>≈ R$ 240–520</span></div><div class="h-4 bg-earth-200 rounded-full"><div class="h-4 bg-amber-700 rounded-full" style="width:100%"></div></div></div>
+                </div>
+                <p class="text-xs text-earth-800 mt-3">As barras usam o limite superior de cada faixa; valores estimados.</p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-green-300" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">Projeto <strong class="text-white">Impacto na Prática</strong>: aprender, responder e agir. Nossa missão é transformar informação sobre sustentabilidade em pequenas ações reais.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-twitter-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-facebook-logo text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Mapa do site">
+                    <h2 class="text-white font-bold text-lg mb-4">Navegação</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="text-white font-bold text-lg mb-4">Contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="ph ph-envelope-simple text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">contato@ecovida.com.br</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-map-pin text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/70 text-sm">
+                <p>&copy; <span id="current-year">2026</span> EcoVida — Impacto na Prática. Projeto acadêmico · UNICID · Atividade A2.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

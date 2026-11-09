@@ -1,0 +1,50 @@
+/* EcoVida — Impacto na Prática | estilos complementares ao Tailwind */
+body { font-family: 'Inter', sans-serif; }
+
+/* Acessibilidade: link "pular para o conteúdo" */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: #081c15; color: #fff; padding: .75rem 1.25rem;
+  border-radius: 0 0 .75rem .75rem; font-weight: 600; transition: top .2s;
+}
+.skip-link:focus { top: 0; }
+
+/* Foco visível para navegação por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #f59e0b; outline-offset: 3px; border-radius: .375rem;
+}
+
+/* Animação de entrada */
+.fade-in { animation: fadeIn .5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* <details> usados como "ler mais" */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary .chev { transform: rotate(180deg); }
+.chev { transition: transform .2s; }
+
+/* Botões de escolha (tempo / área) */
+.choice { transition: all .2s; }
+.choice[aria-pressed="true"] { background: #2d6a4f; color: #fff; border-color: #2d6a4f; box-shadow: 0 8px 20px rgba(45,106,79,.3); }
+.choice[aria-pressed="true"] .choice-sub { color: #d8f3dc; }
+
+/* Opções do quiz */
+.quiz-opt.correct { background: #d8f3dc; border-color: #2d6a4f; }
+.quiz-opt.wrong { background: #fee2e2; border-color: #b91c1c; }
+
+/* Escala de fonte (controle na página de acessibilidade) */
+html[data-fs="1"] { font-size: 112.5%; }
+html[data-fs="2"] { font-size: 125%; }
+
+/* Reduzir animações */
+html.no-motion *, html.no-motion *::before, html.no-motion *::after {
+  animation: none !important; transition: none !important; scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Impressão */
+@media print { nav, footer, .skip-link { display: none !important; } main { padding-top: 0 !important; } }

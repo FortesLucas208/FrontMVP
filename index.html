@@ -19,6 +19,8 @@
                             900: '#3e382c',
                         },
                         leaf: {
+                            50: '#f0faf3',
+                            100: '#d8f3dc',
                             500: '#2d6a4f',
                             600: '#1b4332',
                             700: '#081c15',
@@ -35,6 +37,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Ícones Phosphor -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
     <style>
         /* Estilos adicionais para transições suaves */
         body { font-family: 'Inter', sans-serif; }
@@ -46,46 +51,52 @@
     </style>
 </head>
 <body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <i class="ph-fill ph-leaf text-4xl text-leaf-500"></i>
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
                     <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-leaf-500 font-bold font-medium transition-colors duration-200 whitespace-nowrap" aria-current="page">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
                 </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Início</a>
-                    <a href="#noticias" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Notícias</a>
-                    <a href="#topicos" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Reciclagem</a>
-                    <a href="#dicas" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200">Consumo Consciente</a>
-                    <a href="#contato" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-earth-800 hover:text-leaf-500 focus:outline-none p-2">
-                        <i class="ph ph-list text-3xl"></i>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                <a href="#" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
-                <a href="#noticias" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
-                <a href="#topicos" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Reciclagem</a>
-                <a href="#dicas" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Consumo Consciente</a>
-                <a href="#contato" class="block px-3 py-3 text-base font-medium text-leaf-600 font-bold hover:bg-earth-100 rounded-md mt-4">Contato</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Contato</a>
             </div>
         </div>
     </nav>
 
+    <main id="conteudo">
     <header class="relative pt-20 pb-32 flex content-center items-center justify-center min-h-screen">
         <!-- Background Image -->
         <div class="absolute top-0 w-full h-full bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
@@ -120,6 +131,31 @@
         </div>
     </header>
 
+    <section class="py-20 bg-white" aria-labelledby="tempo-titulo">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 id="tempo-titulo" class="text-3xl md:text-4xl font-bold text-leaf-700 mb-4">Quanto tempo você tem para causar um impacto?</h2>
+            <div class="h-1 w-20 bg-leaf-500 mx-auto rounded-full mb-6"></div>
+            <p class="text-earth-800 text-lg max-w-2xl mx-auto mb-10">Escolha o seu tempo e receba um desafio do tamanho certo. O caminho é sempre o mesmo: <strong>Aprender → Responder → Agir</strong>.</p>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <a href="projetos.html?tempo=5#experiencia" class="group bg-earth-100 hover:bg-leaf-500 hover:text-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <i class="ph ph-timer text-5xl text-leaf-500 group-hover:text-white" aria-hidden="true"></i>
+                    <span class="block text-2xl font-bold mt-3">5 minutos</span>
+                    <span class="block text-sm mt-1">Uma ação rápida, agora mesmo</span>
+                </a>
+                <a href="projetos.html?tempo=15#experiencia" class="group bg-earth-100 hover:bg-leaf-500 hover:text-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <i class="ph ph-clock text-5xl text-leaf-500 group-hover:text-white" aria-hidden="true"></i>
+                    <span class="block text-2xl font-bold mt-3">15 minutos</span>
+                    <span class="block text-sm mt-1">Um pouco mais de dedicação</span>
+                </a>
+                <a href="projetos.html?tempo=30#experiencia" class="group bg-earth-100 hover:bg-leaf-500 hover:text-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <i class="ph ph-hourglass-medium text-5xl text-leaf-500 group-hover:text-white" aria-hidden="true"></i>
+                    <span class="block text-2xl font-bold mt-3">30 min ou mais</span>
+                    <span class="block text-sm mt-1">Um desafio mais completo</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="topicos" class="py-20 bg-earth-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -145,7 +181,7 @@
                         <p class="text-earth-800 mb-6 line-clamp-3">
                             Descubra como a transição para fontes limpas, como energia solar e eólica, está moldando um futuro sustentável e reduzindo a pegada de carbono.
                         </p>
-                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                        <a href="noticias.html#energia" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
                             Ler artigo completo
                             <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
                         </a>
@@ -168,7 +204,7 @@
                         <p class="text-earth-800 mb-6 line-clamp-3">
                             Repensar, reduzir, reutilizar e reciclar. Entenda o modelo que elimina o conceito de lixo e mantém materiais em uso contínuo.
                         </p>
-                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                        <a href="noticias.html#circular" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
                             Ler artigo completo
                             <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
                         </a>
@@ -191,7 +227,7 @@
                         <p class="text-earth-800 mb-6 line-clamp-3">
                             Dicas práticas para reduzir drasticamente a quantidade de lixo que você produz em casa, substituindo plásticos e descartáveis por opções duráveis.
                         </p>
-                        <a href="#" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
+                        <a href="noticias.html#desperdicio" class="inline-flex items-center text-leaf-600 font-semibold hover:text-leaf-500 transition-colors group/link">
                             Ler artigo completo
                             <i class="ph ph-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
                         </a>
@@ -233,6 +269,8 @@
         </div>
     </section>
 
+    </main>
+
     <footer id="contato" class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
@@ -262,11 +300,16 @@
                 <div>
                     <h4 class="text-white font-bold text-lg mb-4">Navegação</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
-                        <li><a href="#topicos" class="text-leaf-100/80 hover:text-white transition-colors">Tópicos em Destaque</a></li>
-                        <li><a href="#dicas" class="text-leaf-100/80 hover:text-white transition-colors">Dicas Diárias</a></li>
-                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Sobre Nós</a></li>
-                        <li><a href="#" class="text-leaf-100/80 hover:text-white transition-colors">Política de Privacidade</a></li>
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
                     </ul>
                 </div>
 
@@ -296,46 +339,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // 1. Mobile Menu Toggle Logic
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = mobileMenuBtn.querySelector('i');
-
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                
-                // Toggle Icon between List and X
-                if (mobileMenu.classList.contains('hidden')) {
-                    menuIcon.classList.remove('ph-x');
-                    menuIcon.classList.add('ph-list');
-                } else {
-                    menuIcon.classList.remove('ph-list');
-                    menuIcon.classList.add('ph-x');
-                }
-            });
-
-            // Close mobile menu when a link is clicked
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.remove('ph-x');
-                    menuIcon.classList.add('ph-list');
-                });
-            });
-
-            // 2. Navbar Scroll Effect (Add shadow/background transparency change)
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
-                    navbar.classList.add('shadow-md');
-                    navbar.classList.replace('bg-white/90', 'bg-white/95');
-                } else {
-                    navbar.classList.remove('shadow-md');
-                    navbar.classList.replace('bg-white/95', 'bg-white/90');
-                }
-            });
-
             // 3. Daily Eco-Tip Logic
             const ecoTips = [
                 "Feche a torneira enquanto escova os dentes e economize até 15 litros de água por escovação.",

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medidas de acessibilidade e inclusão adotadas no site, com foco em pessoas com deficiência.">
+    <title>Acessibilidade | EcoVida — Impacto na Prática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    earth: { 100: '#f4f1ea', 200: '#e3dcc8', 800: '#5c5443', 900: '#3e382c' },
+                    leaf: { 50: '#f0faf3', 100: '#d8f3dc', 500: '#2d6a4f', 600: '#1b4332', 700: '#081c15' }
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-leaf-500 font-bold font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 font-bold text-leaf-500" aria-current="page"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main id="conteudo" class="pb-0">
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-leaf-700 via-leaf-600 to-leaf-500 text-white overflow-hidden">
+        <i class="ph-fill ph-wheelchair absolute -right-6 -bottom-10 text-[220px] text-white/10" aria-hidden="true"></i>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Você está em" class="text-sm text-green-200 mb-4">
+                <ol class="flex items-center gap-2"><li><a href="index.html" class="hover:underline">Início</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-white font-semibold">Acessibilidade</li></ol>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Acessibilidade e inclusão</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-3xl">Tratada como requisito central do projeto: pessoas com deficiência são o nosso público prioritário.</p>
+        </div>
+    </section>
+<section class="py-20 bg-earth-100" aria-labelledby="medidas">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 id="medidas" class="text-3xl md:text-4xl font-bold text-leaf-700 mb-4">Medidas adotadas</h2>
+                <div class="h-1 w-20 bg-leaf-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-image text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Texto alternativo</h3>
+                    <p class="text-earth-800 text-sm">Imagens informativas têm <code>alt</code> descritivo; ícones decorativos são ocultados dos leitores de tela com <code>aria-hidden</code>.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-circle-half text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Contraste adequado</h3>
+                    <p class="text-earth-800 text-sm">Combinações de cor verificadas com razão de contraste acima de 4,5:1 (veja a tabela abaixo).</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-keyboard text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Navegação por teclado</h3>
+                    <p class="text-earth-800 text-sm">Todo o site funciona sem mouse, com foco visível e link “Pular para o conteúdo” no início de cada página.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-translate text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Idioma declarado</h3>
+                    <p class="text-earth-800 text-sm">Todas as páginas usam <code>lang="pt-BR"</code>, para que leitores de tela pronunciem corretamente.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-layout text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">HTML semântico</h3>
+                    <p class="text-earth-800 text-sm">Uso de <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>footer</code> e hierarquia de títulos coerente.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-textbox text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Formulários rotulados</h3>
+                    <p class="text-earth-800 text-sm">Cada campo tem <code>&lt;label for&gt;</code> associado e mensagens de ajuda ligadas por <code>aria-describedby</code>.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-subtitles text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Alternativas à mídia</h3>
+                    <p class="text-earth-800 text-sm">Vídeo e áudio possuem transcrição em texto na página <a href="midia.html" class="text-leaf-500 underline font-semibold">Mídia</a>.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-hand-pointing text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Alvos de toque amplos</h3>
+                    <p class="text-earth-800 text-sm">Botões e links têm área generosa, facilitando o uso em telas pequenas e por pessoas com dificuldade motora.</p>
+                </article>
+                <article class="bg-white rounded-2xl p-7 shadow-md">
+                    <i class="ph ph-wind text-4xl text-leaf-500 mb-3 block" aria-hidden="true"></i>
+                    <h3 class="font-bold text-lg mb-2">Movimento reduzido</h3>
+                    <p class="text-earth-800 text-sm">O site respeita a preferência do sistema por menos animações e oferece um botão para desativá-las.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" aria-labelledby="ajustes">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="ajustes" class="text-3xl font-bold text-leaf-700 mb-3 text-center">Ajuste o site para você</h2>
+            <p class="text-center text-earth-800 mb-10">Suas preferências ficam salvas neste navegador e valem para todas as páginas.</p>
+            <div class="bg-earth-100 rounded-3xl p-8 grid sm:grid-cols-2 gap-8">
+                <div role="group" aria-labelledby="lbl-fonte">
+                    <h3 id="lbl-fonte" class="font-bold mb-3">Tamanho do texto</h3>
+                    <div class="flex gap-3">
+                        <button type="button" data-fs="0" class="fs-btn choice border-2 border-earth-200 bg-white rounded-xl px-5 py-3 font-semibold" aria-pressed="false" aria-label="Texto normal">A</button>
+                        <button type="button" data-fs="1" class="fs-btn choice border-2 border-earth-200 bg-white rounded-xl px-5 py-3 font-semibold text-lg" aria-pressed="false" aria-label="Texto grande">A+</button>
+                        <button type="button" data-fs="2" class="fs-btn choice border-2 border-earth-200 bg-white rounded-xl px-5 py-3 font-semibold text-xl" aria-pressed="false" aria-label="Texto muito grande">A++</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 id="lbl-motion" class="font-bold mb-3">Animações</h3>
+                    <button type="button" id="motion-btn" class="choice border-2 border-earth-200 bg-white rounded-xl px-5 py-3 font-semibold inline-flex items-center gap-2" aria-pressed="false" aria-labelledby="lbl-motion motion-btn"><i class="ph ph-wind" aria-hidden="true"></i> Reduzir animações</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-earth-100" aria-labelledby="contraste">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="contraste" class="text-3xl font-bold text-leaf-700 mb-3 text-center">Contraste das cores</h2>
+            <p class="text-center text-earth-800 mb-10">Razões calculadas pela fórmula WCAG 2.1. O mínimo para texto normal é 4,5:1 (nível AA).</p>
+            <div class="table-wrap rounded-2xl border border-earth-200 bg-white">
+                <table class="text-left">
+                    <caption class="sr-only">Razão de contraste entre texto e fundo nas cores principais do site</caption>
+                    <thead class="bg-leaf-600 text-white"><tr><th scope="col" class="p-4">Uso</th><th scope="col" class="p-4">Exemplo</th><th scope="col" class="p-4">Razão</th><th scope="col" class="p-4">Resultado</th></tr></thead>
+                    <tbody class="divide-y divide-earth-200">
+                        <tr><th scope="row" class="p-4 font-semibold">Texto principal</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#f4f1ea;color:#3e382c">Aa</span></td><td class="p-4">10,30:1</td><td class="p-4">AA e AAA</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Texto secundário</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#f4f1ea;color:#5c5443">Aa</span></td><td class="p-4">6,64:1</td><td class="p-4">AA</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Links e destaques</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#fff;color:#2d6a4f">Aa</span></td><td class="p-4">6,39:1</td><td class="p-4">AA</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Botão principal</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#2d6a4f;color:#fff">Aa</span></td><td class="p-4">6,39:1</td><td class="p-4">AA</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Botão ao passar o mouse</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#1b4332;color:#fff">Aa</span></td><td class="p-4">11,08:1</td><td class="p-4">AA e AAA</td></tr>
+                        <tr><th scope="row" class="p-4 font-semibold">Rodapé</th><td class="p-4"><span class="px-3 py-1 rounded" style="background:#081c15;color:#f4f1ea">Aa</span></td><td class="p-4">15,68:1</td><td class="p-4">AA e AAA</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" aria-labelledby="atalhos">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="atalhos" class="text-3xl font-bold text-leaf-700 mb-10 text-center">Como navegar pelo teclado</h2>
+            <dl class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-earth-100 rounded-xl p-5"><dt class="font-bold"><kbd class="bg-white border border-earth-200 rounded px-2 py-1">Tab</kbd> / <kbd class="bg-white border border-earth-200 rounded px-2 py-1">Shift + Tab</kbd></dt><dd class="text-earth-800 mt-2">Avança ou volta entre links, botões e campos.</dd></div>
+                <div class="bg-earth-100 rounded-xl p-5"><dt class="font-bold"><kbd class="bg-white border border-earth-200 rounded px-2 py-1">Enter</kbd> / <kbd class="bg-white border border-earth-200 rounded px-2 py-1">Espaço</kbd></dt><dd class="text-earth-800 mt-2">Ativa o link ou botão em foco, inclusive as opções do quiz.</dd></div>
+                <div class="bg-earth-100 rounded-xl p-5"><dt class="font-bold"><kbd class="bg-white border border-earth-200 rounded px-2 py-1">Esc</kbd></dt><dd class="text-earth-800 mt-2">Fecha o menu “Mais”, o menu móvel e a visualização ampliada da galeria.</dd></div>
+                <div class="bg-earth-100 rounded-xl p-5"><dt class="font-bold">Primeiro <kbd class="bg-white border border-earth-200 rounded px-2 py-1">Tab</kbd></dt><dd class="text-earth-800 mt-2">Mostra o link “Pular para o conteúdo principal”.</dd></div>
+            </dl>
+            <p class="mt-10 text-center text-earth-800">Encontrou uma barreira de acesso? <a href="contato.html" class="text-leaf-500 underline font-semibold">Fale com a gente</a>.</p>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        const root = document.documentElement;
+        const fsBtns = document.querySelectorAll('.fs-btn');
+        const motionBtn = document.getElementById('motion-btn');
+        function markFs() {
+            const cur = root.getAttribute('data-fs') || '0';
+            fsBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fs === cur)));
+        }
+        fsBtns.forEach(b => b.addEventListener('click', () => {
+            root.setAttribute('data-fs', b.dataset.fs);
+            try { localStorage.setItem('ecovida-fs', b.dataset.fs); } catch (e) {}
+            markFs();
+        }));
+        motionBtn.addEventListener('click', () => {
+            const off = root.classList.toggle('no-motion');
+            motionBtn.setAttribute('aria-pressed', String(off));
+            try { localStorage.setItem('ecovida-motion', off ? 'off' : 'on'); } catch (e) {}
+        });
+        // main.js (defer) aplica as preferências salvas; sincronizamos os botões depois
+        window.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+            markFs();
+            motionBtn.setAttribute('aria-pressed', String(root.classList.contains('no-motion')));
+        }, 0));
+    })();
+    </script>
+
+    </main>
+
+    <footer class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-green-300" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">Projeto <strong class="text-white">Impacto na Prática</strong>: aprender, responder e agir. Nossa missão é transformar informação sobre sustentabilidade em pequenas ações reais.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-twitter-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-facebook-logo text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Mapa do site">
+                    <h2 class="text-white font-bold text-lg mb-4">Navegação</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="text-white font-bold text-lg mb-4">Contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="ph ph-envelope-simple text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">contato@ecovida.com.br</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-map-pin text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/70 text-sm">
+                <p>&copy; <span id="current-year">2026</span> EcoVida — Impacto na Prática. Projeto acadêmico · UNICID · Atividade A2.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

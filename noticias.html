@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigos e conteúdos informativos sobre sustentabilidade e impacto social.">
+    <title>Notícias | EcoVida — Impacto na Prática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    earth: { 100: '#f4f1ea', 200: '#e3dcc8', 800: '#5c5443', 900: '#3e382c' },
+                    leaf: { 50: '#f0faf3', 100: '#d8f3dc', 500: '#2d6a4f', 600: '#1b4332', 700: '#081c15' }
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-earth-100 text-earth-900 antialiased overflow-x-hidden">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm" id="navbar" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2" aria-label="EcoVida — página inicial">
+                    <i class="ph-fill ph-leaf text-4xl text-leaf-500" aria-hidden="true"></i>
+                    <span class="font-bold text-2xl tracking-tight text-leaf-700">EcoVida</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="index.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Início</a>
+                    <a href="sobre.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Sobre</a>
+                    <a href="projetos.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Desafios</a>
+                    <a href="impacto.html" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 whitespace-nowrap">Impacto</a>
+                    <a href="noticias.html" class="text-leaf-500 font-bold font-medium transition-colors duration-200 whitespace-nowrap" aria-current="page">Notícias</a>
+                    <div class="relative" id="more-wrap">
+                        <button type="button" id="more-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu" class="text-earth-800 hover:text-leaf-500 font-medium transition-colors duration-200 inline-flex items-center gap-1">Mais <i class="ph ph-caret-down text-sm" aria-hidden="true"></i></button>
+                        <div id="more-menu" role="menu" class="hidden absolute right-0 mt-4 w-64 bg-white rounded-xl shadow-xl border border-earth-200 py-2"><a href="galeria.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-images text-lg" aria-hidden="true"></i>Galeria</a><a href="midia.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-play-circle text-lg" aria-hidden="true"></i>Mídia</a><a href="acessibilidade.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-wheelchair text-lg" aria-hidden="true"></i>Acessibilidade</a><a href="orcamento_hospedagem.html" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-earth-100 text-earth-800"><i class="ph ph-currency-circle-dollar text-lg" aria-hidden="true"></i>Orçamento de hospedagem</a></div>
+                    </div>
+                    <a href="contato.html" class="bg-leaf-500 hover:bg-leaf-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contato</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" class="text-earth-800 hover:text-leaf-500 p-2">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-earth-200 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Início</a>
+                <a href="sobre.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Sobre</a>
+                <a href="projetos.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Desafios</a>
+                <a href="impacto.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Impacto</a>
+                <a href="noticias.html" class="block px-3 py-3 text-base font-medium text-leaf-500 font-bold bg-earth-100 rounded-md" aria-current="page">Notícias</a>
+                <a href="galeria.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Galeria</a>
+                <a href="midia.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Mídia</a>
+                <a href="acessibilidade.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Acessibilidade</a>
+                <a href="orcamento_hospedagem.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Orçamento de hospedagem</a>
+                <a href="contato.html" class="block px-3 py-3 text-base font-medium text-earth-800 hover:text-leaf-500 hover:bg-earth-100 rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main id="conteudo" class="pb-0">
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-leaf-700 via-leaf-600 to-leaf-500 text-white overflow-hidden">
+        <i class="ph-fill ph-newspaper absolute -right-6 -bottom-10 text-[220px] text-white/10" aria-hidden="true"></i>
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Você está em" class="text-sm text-green-200 mb-4">
+                <ol class="flex items-center gap-2"><li><a href="index.html" class="hover:underline">Início</a></li><li aria-hidden="true">/</li><li aria-current="page" class="text-white font-semibold">Notícias</li></ol>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Notícias e artigos</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-3xl">Conteúdos informativos para entender os temas por trás de cada desafio.</p>
+        </div>
+    </section>
+<section class="py-20 bg-earth-100" aria-labelledby="destaque">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="destaque" class="sr-only">Artigo em destaque</h2>
+            <article id="energia" class="bg-white rounded-3xl shadow-lg overflow-hidden grid lg:grid-cols-2 scroll-mt-28">
+                <div class="min-h-[260px] bg-green-100">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80" alt="Energia renovável: geração de energia limpa" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="p-8 lg:p-12 flex flex-col justify-center">
+                    <p class="text-sm font-bold uppercase tracking-wider text-leaf-500 mb-2">Destaque · Inovação · 3 min de leitura</p>
+                    <h3 class="text-3xl font-bold mb-4">Energia renovável: por que a transição importa</h3>
+                    <p class="text-earth-800 text-lg mb-4">Fontes como a solar e a eólica geram eletricidade sem emitir gases de efeito estufa durante a operação, ajudando a reduzir a pegada de carbono da matriz energética.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler artigo completo <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <div class="mt-4 text-earth-800 space-y-3">
+                            <p>A energia solar aproveita a radiação do sol por meio de painéis fotovoltaicos; a eólica usa o vento para girar turbinas. Ambas dependem de condições naturais e, por isso, são combinadas a outras fontes e a sistemas de armazenamento para garantir fornecimento estável.</p>
+                            <p>O Brasil tem uma matriz elétrica com grande participação de fontes renováveis, e a geração solar distribuída, instalada em telhados de casas e comércios, cresce de forma expressiva.</p>
+                            <p><strong>O que você pode fazer:</strong> reduzir o consumo (LEDs, desligar aparelhos em stand-by), conhecer sua conta de luz e pesquisar opções de energia limpa disponíveis na sua região.</p>
+                        </div>
+                    </details>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" aria-labelledby="mais">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="mais" class="text-3xl font-bold text-leaf-700 mb-10 text-center">Mais leituras</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article id="circular" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Conceito · 3 min</p>
+                    <h3 class="text-xl font-bold mb-3">Economia circular em poucas palavras</h3>
+                    <p class="text-earth-800 mb-4">No modelo linear, extraímos, produzimos e descartamos. Na economia circular, o objetivo é manter materiais em uso pelo maior tempo possível.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Os princípios mais citados são: repensar, reduzir, reutilizar, reparar e reciclar. Produtos duráveis, fáceis de consertar e feitos de materiais recicláveis diminuem a necessidade de extrair novos recursos e a quantidade de resíduos.</p>
+                    </details>
+                </article>
+
+                <article id="desperdicio" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Estilo de vida · 3 min</p>
+                    <h3 class="text-xl font-bold mb-3">Desperdício zero: por onde começar</h3>
+                    <p class="text-earth-800 mb-4">Reduzir o lixo não exige uma mudança radical. Comece trocando um descartável por um item durável.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Leve sua ecobag, use garrafa e copo reutilizáveis, compre a granel quando possível e dê um novo uso a potes e embalagens. Um passo de cada vez cria hábitos que duram.</p>
+                    </details>
+                </article>
+
+                <article id="coleta" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Reciclagem · 4 min</p>
+                    <h3 class="text-xl font-bold mb-3">Coleta seletiva: o que realmente funciona</h3>
+                    <p class="text-earth-800 mb-4">Separar o lixo em casa é o começo de um sistema que envolve cooperativas, catadores e indústria.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Material limpo e seco tem muito mais chance de ser reaproveitado. As regras de coleta variam por cidade, então vale conferir no site da prefeitura quais resíduos são aceitos e em que dias.</p>
+                    </details>
+                </article>
+
+                <article id="agua" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Água · 3 min</p>
+                    <h3 class="text-xl font-bold mb-3">A água que passa despercebida</h3>
+                    <p class="text-earth-800 mb-4">Vazamentos e hábitos automáticos respondem por parte importante do consumo doméstico.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Checar torneiras, descargas e mangueiras, encurtar o banho e reaproveitar água da máquina de lavar são medidas simples. O hidrômetro ajuda: se ele gira com todas as torneiras fechadas, há um vazamento.</p>
+                    </details>
+                </article>
+
+                <article id="alimentos" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Alimentos · 3 min</p>
+                    <h3 class="text-xl font-bold mb-3">Aproveitamento integral dos alimentos</h3>
+                    <p class="text-earth-800 mb-4">Talos, folhas e cascas muitas vezes são comestíveis e nutritivos.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Com planejamento de compras e armazenamento correto, é possível usar mais do que já compramos. O que não puder ser aproveitado pode virar adubo por meio da compostagem.</p>
+                    </details>
+                </article>
+
+                <article id="social" class="bg-earth-100 rounded-2xl p-8 shadow-sm scroll-mt-28">
+                    <p class="text-xs font-bold uppercase tracking-wider text-leaf-500 mb-2">Impacto social · 4 min</p>
+                    <h3 class="text-xl font-bold mb-3">Voluntariado: como começar</h3>
+                    <p class="text-earth-800 mb-4">Você não precisa de muito tempo para ajudar: precisa apenas encontrar a iniciativa certa.</p>
+                    <details>
+                        <summary class="inline-flex items-center gap-2 text-leaf-500 font-semibold">Ler mais <i class="ph ph-caret-down chev" aria-hidden="true"></i></summary>
+                        <p class="mt-3 text-earth-800">Pesquise organizações da sua região, confira se são transparentes sobre suas contas e atividades e pergunte do que precisam: tempo, habilidades, doações ou divulgação.</p>
+                    </details>
+                </article>
+            </div>
+            <p class="text-sm text-earth-800 text-center mt-10">Textos informativos produzidos pela equipe para fins educativos. Para dados atualizados, consulte as fontes citadas na página <a href="impacto.html" class="text-leaf-500 underline font-semibold">Impacto</a>.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-leaf-700 pt-16 pb-8 border-t-4 border-leaf-500 text-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-leaf text-3xl text-green-300" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">EcoVida</span>
+                    </div>
+                    <p class="text-leaf-100/80 mb-6 max-w-sm">Projeto <strong class="text-white">Impacto na Prática</strong>: aprender, responder e agir. Nossa missão é transformar informação sobre sustentabilidade em pequenas ações reais.</p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Instagram (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-twitter-logo text-xl" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook (link fictício)" class="w-10 h-10 rounded-full bg-leaf-600 flex items-center justify-center hover:bg-leaf-500 transition-colors text-white"><i class="ph ph-facebook-logo text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Mapa do site">
+                    <h2 class="text-white font-bold text-lg mb-4">Navegação</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-leaf-100/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="text-leaf-100/80 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="text-leaf-100/80 hover:text-white transition-colors">Desafios</a></li>
+                        <li><a href="impacto.html" class="text-leaf-100/80 hover:text-white transition-colors">Impacto</a></li>
+                        <li><a href="noticias.html" class="text-leaf-100/80 hover:text-white transition-colors">Notícias</a></li>
+                        <li><a href="galeria.html" class="text-leaf-100/80 hover:text-white transition-colors">Galeria</a></li>
+                        <li><a href="midia.html" class="text-leaf-100/80 hover:text-white transition-colors">Mídia</a></li>
+                        <li><a href="acessibilidade.html" class="text-leaf-100/80 hover:text-white transition-colors">Acessibilidade</a></li>
+                        <li><a href="orcamento_hospedagem.html" class="text-leaf-100/80 hover:text-white transition-colors">Orçamento de hospedagem</a></li>
+                        <li><a href="contato.html" class="text-leaf-100/80 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="text-white font-bold text-lg mb-4">Contato</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="ph ph-envelope-simple text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">contato@ecovida.com.br</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-map-pin text-xl text-green-300 mt-1" aria-hidden="true"></i><span class="text-leaf-100/80">Av. Paulista, 1000<br>São Paulo, SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-leaf-600 text-center text-leaf-100/70 text-sm">
+                <p>&copy; <span id="current-year">2026</span> EcoVida — Impacto na Prática. Projeto acadêmico · UNICID · Atividade A2.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
