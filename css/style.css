@@ -48,3 +48,182 @@ html.no-motion *, html.no-motion *::before, html.no-motion *::after {
 
 /* Impressão */
 @media print { nav, footer, .skip-link { display: none !important; } main { padding-top: 0 !important; } }
+
+.erro-campo {
+  display: block;
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #b91c1c; /* sobre fundo branco: 6,5:1 */
+}
+.erro-campo::before {
+  content: "⚠ ";
+  content: "⚠ " / "";
+}
+
+/* Campo inválido: borda mais grossa, cor e fundo de destaque (não depende só da cor) */
+form input[aria-invalid="true"],
+form select[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+  border-color: #b91c1c;
+  border-width: 2px;
+  background-color: #fef2f2;
+}
+
+/* Resumo de erros no topo do formulário */
+.resumo-erros {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 2px solid #b91c1c;
+  border-radius: 0.5rem;
+  background-color: #fef2f2;
+  color: #7f1d1d; /* sobre #fef2f2: 9:1 */
+}
+.resumo-erros p {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+.resumo-erros ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.resumo-erros a {
+  color: #7f1d1d;
+  text-decoration: underline;
+}
+
+/* Mensagem de sucesso */
+.status-formulario {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 2px solid #166534;
+  border-radius: 0.5rem;
+  background-color: #f0fdf4;
+  color: #14532d; /* sobre #f0fdf4: 10:1 */
+  font-weight: 600;
+}
+.status-formulario[hidden] {
+  display: none;
+}
+.status-formulario:focus {
+  outline: 3px solid #166534;
+  outline-offset: 2px;
+}
+
+/* Último envio guardado no localStorage */
+.ultimo-contato {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151; /* sobre branco: 10:1 */
+}
+.ultimo-contato button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  background: none;
+  color: #166534;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.ultimo-contato button:focus-visible {
+  outline: 3px solid #166534;
+  outline-offset: 2px;
+}
+
+/* ---------- 2. Seção "Relação com os ODS" (impacto.html) ---------- */
+
+.ods-secao {
+  max-width: 72rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.ods-secao h2 {
+  margin-bottom: 0.5rem;
+}
+.ods-intro {
+  max-width: 48rem;
+  color: #374151;
+}
+
+/* Grade responsiva: 1 coluna no celular, 2 no tablet, 3 no desktop */
+.ods-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A cor oficial de cada ODS aparece só como faixa lateral decorativa;
+   a identificação vem do texto ("ODS 6"), nunca só da cor. */
+.ods-cartao {
+  height: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #d1d5db;
+  border-left: 8px solid var(--ods-cor, #166534);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+.ods-cartao h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: #111827;
+}
+.ods-cartao p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem;
+  color: #374151;
+}
+.ods-cartao p:last-child {
+  margin-bottom: 0;
+}
+.ods-cartao strong {
+  color: #111827;
+}
+
+.ods-4  { --ods-cor: #c5192d; }
+.ods-6  { --ods-cor: #26bde2; }
+.ods-11 { --ods-cor: #fd9d24; }
+.ods-12 { --ods-cor: #bf8b2e; }
+.ods-13 { --ods-cor: #3f7e44; }
+
+/* Tabela que relaciona áreas do site e ODS */
+.ods-tabela-wrap {
+  overflow-x: auto; /* a tabela rola dentro do próprio contêiner no celular */
+}
+.ods-tabela {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+}
+.ods-tabela caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  font-style: italic;
+  color: #374151;
+}
+.ods-tabela th,
+.ods-tabela td {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #d1d5db;
+  text-align: left;
+  vertical-align: top;
+}
+.ods-tabela thead th {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.ods-fonte {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+.ods-fonte a {
+  color: #166534;
+  text-decoration: underline;
+}
