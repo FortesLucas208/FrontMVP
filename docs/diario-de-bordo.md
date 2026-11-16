@@ -1,7 +1,7 @@
 # Diário de Bordo — Impacto na Prática (EcoVida)
 
 **Disciplina:** Desenvolvimento Front-End para Web · **Atividade:** A2 — Entrega 01
-**Equipe:** Felipe Piazza Bononi (47349361), Lucas Fortes de Melo (46761977), Vinicius Passos Macedo (47116871)
+**Equipe:** Felipe Piazza Bononi (47349361), Guilherme Ricardo Santos Schiavinato (47769068), Lucas Fortes de Melo (46761977), Vinicius Passos Macedo (47116871)
 **Professor orientador:** Paulo Sergio Fratta Junior
 
 ---

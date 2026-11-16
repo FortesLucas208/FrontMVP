@@ -10,6 +10,7 @@ Site de incentivo e conscientização ambiental, interativo e responsivo, que co
 | Nome | RGM |
 |---|---:|
 | Felipe Piazza Bononi | 47349361 |
+| Guilherme Ricardo Santos Schiavinato| 47769068 |
 | Lucas Fortes de Melo | 46761977 |
 | Vinicius Passos Macedo | 47116871 |
 
