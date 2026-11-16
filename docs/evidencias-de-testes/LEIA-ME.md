@@ -7,11 +7,11 @@ Esta pasta reúne os prints e registros dos testes do site **EcoVida — Impacto
 
 | Teste | O que foi verificado | Arquivos |
 |---|---|---|
-| Validação do código (W3C) | HTML das 10 páginas | _(inclua aqui os prints)_ |
-| Navegação | Menu e links entre as 10 páginas | _(prints)_ |
-| Responsividade | Celular, tablet e desktop | _(prints)_ |
-| Acessibilidade | Navegação por teclado e relatório Lighthouse | _(prints)_ |
-| Formulário | Validação com dados válidos e inválidos | _(prints)_ |
-| Fluxo do quiz | Tempo → área → contexto → quiz → desafio → impacto | _(prints)_ |
+| Validação do código (W3C) | HTML das 10 páginas | 
+| Navegação | Menu e links entre as 10 páginas |
+| Responsividade | Celular, tablet e desktop |
+| Acessibilidade | Navegação por teclado e relatório Lighthouse | 
+| Formulário | Validação com dados válidos e inválidos | 
+| Fluxo do quiz | Tempo → área → contexto → quiz → desafio → impacto | 
 
-> Copie os prints para esta pasta e preencha a coluna "Arquivos" com os nomes dos arquivos.
+
