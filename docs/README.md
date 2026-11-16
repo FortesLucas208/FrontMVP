@@ -3,7 +3,7 @@
 Site de incentivo e conscientização ambiental, interativo e responsivo, que conduz o usuário por **Aprender → Responder → Agir**.
 
 🌐 **Site publicado:** https://ecovidaproject.up.railway.app  
-📦 **Repositório:** https://github.com/FortesLucas208/FrontMVP
+📦 **Repositório:** https://github.com/FortesLucas208/U-UNICID-CC-FRONTEND-2260022-N7-2-2026-NT-EcoVida-Portal-de-Sustentabilidade
 
 ## Autores
 
