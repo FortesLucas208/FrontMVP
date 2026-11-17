@@ -215,6 +215,24 @@ Desenvolvimento incremental: definição do conteúdo e do fluxo da experiência
 - Produzir conteúdo próprio em áudio e vídeo, com legendas e transcrições;
 - Registrar um domínio próprio (por exemplo, `.com.br`).
 
+Relação com os ODS
+
+O EcoVida se relaciona com cinco Objetivos de Desenvolvimento Sustentável da Agenda 2030 (ONU). A seção completa está em impacto.html.
+
+Área do site	ODS	Como contribui
+Alimentos	ODS 2 e ODS 12	Reduz o desperdício de alimentos no consumo
+Água	ODS 6	Incentiva o uso eficiente da água
+Reciclagem e cidade	ODS 11 e ODS 12	Orienta a separação e a redução de resíduos
+Consumo consciente	ODS 12 e ODS 13	Estimula escolhas de menor impacto ambiental
+Impacto social	ODS 4 e ODS 13	Educação e conscientização para a ação climática
+2) docs/diario-de-bordo.md: nova entrada (ajuste data e detalhes ao que a equipe fez de fato)
+11. Validação do formulário em JavaScript e ajustes finais: 16/11/2026
+O que foi feito: o formulário de contato passou a ser validado por js/validacao-formulario.js (novalidate + preventDefault), com mensagem de erro por campo, destaque visual, resumo de erros e foco no primeiro campo inválido. O último envio (nome, assunto e data) é guardado no localStorage.
+Decisões: o script antigo que ficava dentro de contato.html foi removido; as cores foram centralizadas em variáveis CSS (:root em css/style.css).
+Uso de IA: o código-base da validação foi gerado com apoio de IA (Claude) a partir da descrição do formulário. A equipe leu o código, ajustou-o à página e testou os casos: envio vazio, e-mail inválido, telefone fora do formato, mensagem curta e envio correto.
+Evidências: prints dos testes em docs/evidencias-de-testes/.
+Problemas encontrados: o envio com campos inválidos não deve acionar o tratador antigo; resolvido com um único tratador de envio.
+
 ## Status do Projeto
 
 **Entrega 02 (Atividade A2) concluída e publicada.** O projeto conta com 10 páginas integradas, recursos interativos, medidas de acessibilidade, layout responsivo e hospedagem online. A versão entregue está disponível no site publicado e no repositório GitHub.
