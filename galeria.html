@@ -159,7 +159,7 @@
         <div class="relative bg-white rounded-2xl overflow-hidden">
             <h2 id="lb-title" class="sr-only">Imagem ampliada</h2>
             <button type="button" id="lb-close" class="absolute top-3 right-3 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black" aria-label="Fechar imagem ampliada"><i class="ph ph-x text-xl" aria-hidden="true"></i></button>
-            <img id="lb-img" src="" alt="" class="max-w-[95vw] max-h-[85vh] object-contain">
+            <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" class="max-w-[95vw] max-h-[85vh] object-contain">
             <p id="lb-cap" class="p-4 text-sm"></p>
         </div>
     </dialog>
@@ -168,6 +168,7 @@
     (function () {
         const dlg = document.getElementById('lightbox');
         const img = document.getElementById('lb-img');
+        const VAZIA = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; // espaço reservado (o atributo src não pode ficar vazio)
         const cap = document.getElementById('lb-cap');
         let opener = null;
         document.querySelectorAll('.zoom').forEach(btn => btn.addEventListener('click', () => {
@@ -179,7 +180,7 @@
         }));
         document.getElementById('lb-close').addEventListener('click', () => dlg.close());
         dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-        dlg.addEventListener('close', () => { img.src = ''; if (opener) opener.focus(); });
+        dlg.addEventListener('close', () => { img.src = VAZIA; img.alt = ''; if (opener) opener.focus(); });
     })();
     </script>
 
