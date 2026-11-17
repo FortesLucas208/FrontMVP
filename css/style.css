@@ -227,3 +227,159 @@ form textarea[aria-invalid="true"] {
   color: #166534;
   text-decoration: underline;
 }
+
+/* EcoVida — Impacto na Prática | estilos complementares ao Tailwind */
+
+/* ---------- Variáveis de design (paleta do site; espelha o tailwind.config das páginas) ---------- */
+:root {
+  /* Verdes (marca) */
+  --cor-folha-100: #d8f3dc;
+  --cor-folha-500: #2d6a4f;
+  --cor-folha-700: #081c15;
+  /* Foco visível (teclado) */
+  --cor-foco: #f59e0b;
+  /* Feedback do formulário: erro e sucesso (contraste AA verificado) */
+  --cor-erro: #b91c1c;
+  --cor-erro-fundo: #fef2f2;
+  --cor-erro-claro: #fee2e2;
+  --cor-erro-texto: #7f1d1d;
+  --cor-sucesso: #166534;
+  --cor-sucesso-fundo: #f0fdf4;
+  --cor-sucesso-texto: #14532d;
+  /* Neutros */
+  --cor-texto: #111827;
+  --cor-texto-suave: #374151;
+  --cor-branco: #ffffff;
+}
+body { font-family: 'Inter', sans-serif; }
+
+/* Acessibilidade: link "pular para o conteúdo" */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: var(--cor-folha-700); color: #fff; padding: .75rem 1.25rem;
+  border-radius: 0 0 .75rem .75rem; font-weight: 600; transition: top .2s;
+}
+.skip-link:focus { top: 0; }
+
+/* Foco visível para navegação por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--cor-foco); outline-offset: 3px; border-radius: .375rem;
+}
+
+/* Animação de entrada */
+.fade-in { animation: fadeIn .5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* <details> usados como "ler mais" */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary .chev { transform: rotate(180deg); }
+.chev { transition: transform .2s; }
+
+/* Botões de escolha (tempo / área) */
+.choice { transition: all .2s; }
+.choice[aria-pressed="true"] { background: var(--cor-folha-500); color: #fff; border-color: var(--cor-folha-500); box-shadow: 0 8px 20px rgba(45,106,79,.3); }
+.choice[aria-pressed="true"] .choice-sub { color: var(--cor-folha-100); }
+
+/* Opções do quiz */
+.quiz-opt.correct { background: var(--cor-folha-100); border-color: var(--cor-folha-500); }
+.quiz-opt.wrong { background: var(--cor-erro-claro); border-color: var(--cor-erro); }
+
+/* Escala de fonte (controle na página de acessibilidade) */
+html[data-fs="1"] { font-size: 112.5%; }
+html[data-fs="2"] { font-size: 125%; }
+
+/* Reduzir animações */
+html.no-motion *, html.no-motion *::before, html.no-motion *::after {
+  animation: none !important; transition: none !important; scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Impressão */
+@media print { nav, footer, .skip-link { display: none !important; } main { padding-top: 0 !important; } }
+
+.erro-campo {
+  display: block;
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-erro); /* sobre fundo branco: 6,5:1 */
+}
+.erro-campo::before {
+  content: "⚠ ";
+  content: "⚠ " / "";
+}
+
+/* Campo inválido: borda mais grossa, cor e fundo de destaque (não depende só da cor) */
+form input[aria-invalid="true"],
+form select[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+  border-color: var(--cor-erro);
+  border-width: 2px;
+  background-color: var(--cor-erro-fundo);
+}
+
+/* Resumo de erros no topo do formulário */
+.resumo-erros {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 2px solid var(--cor-erro);
+  border-radius: 0.5rem;
+  background-color: var(--cor-erro-fundo);
+  color: var(--cor-erro-texto); /* sobre var(--cor-erro-fundo): 9:1 */
+}
+.resumo-erros p {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+.resumo-erros ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.resumo-erros a {
+  color: var(--cor-erro-texto);
+  text-decoration: underline;
+}
+
+/* Mensagem de sucesso */
+.status-formulario {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 2px solid var(--cor-sucesso);
+  border-radius: 0.5rem;
+  background-color: var(--cor-sucesso-fundo);
+  color: var(--cor-sucesso-texto); /* sobre var(--cor-sucesso-fundo): 10:1 */
+  font-weight: 600;
+}
+.status-formulario[hidden] {
+  display: none;
+}
+.status-formulario:focus {
+  outline: 3px solid var(--cor-sucesso);
+  outline-offset: 2px;
+}
+
+/* Último envio guardado no localStorage */
+.ultimo-contato {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave); /* sobre branco: 10:1 */
+}
+.ultimo-contato button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  background: none;
+  color: var(--cor-sucesso);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.ultimo-contato button:focus-visible {
+  outline: 3px solid var(--cor-sucesso);
+  outline-offset: 2px;
+}
