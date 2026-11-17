@@ -168,6 +168,155 @@
             </aside>
         </div>
     </section>
+    <!--
+  SEÇÃO "COMO APOIAR" — colar em contato.html, dentro de <main>,
+  DEPOIS do </section> do formulário (a que tem aria-labelledby="form-titulo")
+  e ANTES de <section class="py-20 bg-white" aria-labelledby="equipe">.
+  Usa só classes Tailwind já existentes no projeto (leaf, earth). Não precisa de CSS novo.
+-->
+<section id="apoiar" class="py-20 bg-leaf-50" aria-labelledby="apoiar-titulo">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 id="apoiar-titulo" class="text-3xl md:text-4xl font-bold text-leaf-700 mb-4">Como apoiar o EcoVida</h2>
+            <div class="h-1 w-20 bg-leaf-500 mx-auto rounded-full mb-6"></div>
+            <p class="text-earth-800 text-lg">Pequenas ações somadas viram impacto coletivo. Escolha a forma de ajudar que cabe no seu tempo.</p>
+        </div>
+
+        <ul class="grid md:grid-cols-3 gap-8">
+            <!-- 1. Doar -->
+            <li class="bg-white rounded-2xl p-8 shadow-md border-t-4 border-leaf-500 flex flex-col">
+                <div class="w-14 h-14 rounded-full bg-leaf-100 text-leaf-500 flex items-center justify-center mb-4" aria-hidden="true">
+                    <i class="ph ph-heart text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-earth-900 mb-2">Fazer uma doação</h3>
+                <p class="text-earth-800 mb-4">Contribuições ajudam a produzir materiais educativos e a manter ações de reciclagem e economia de água em comunidades.</p>
+                <p class="text-sm text-earth-800 mb-1">Chave PIX (exemplo):</p>
+                <p id="pix-chave" class="font-mono font-semibold text-earth-900 bg-earth-100 rounded-lg px-3 py-2 mb-4 break-all">doacoes@ecovida.exemplo</p>
+                <button type="button" id="btn-copiar-pix" class="mt-auto bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2">
+                    <i class="ph ph-copy" aria-hidden="true"></i> Copiar chave PIX
+                </button>
+                <p class="text-xs text-earth-800 mt-3">Dados fictícios, para fins acadêmicos. Nenhuma doação real é processada.</p>
+            </li>
+
+            <!-- 2. Voluntariar-se -->
+            <li class="bg-white rounded-2xl p-8 shadow-md border-t-4 border-leaf-500 flex flex-col">
+                <div class="w-14 h-14 rounded-full bg-leaf-100 text-leaf-500 flex items-center justify-center mb-4" aria-hidden="true">
+                    <i class="ph ph-users-three text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-earth-900 mb-2">Ser voluntário(a)</h3>
+                <p class="text-earth-800 mb-4">Ajude a organizar mutirões de reciclagem, oficinas e campanhas de conscientização no seu bairro, com a disponibilidade que tiver.</p>
+                <ul class="text-earth-800 text-sm space-y-1 mb-6 list-disc pl-5">
+                    <li>Mutirões de separação de recicláveis</li>
+                    <li>Oficinas sobre consumo consciente</li>
+                    <li>Divulgação em escolas e comunidades</li>
+                </ul>
+                <a href="#form-titulo" id="btn-voluntario" class="mt-auto bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2">
+                    <i class="ph ph-hand-waving" aria-hidden="true"></i> Quero ser voluntário(a)
+                </a>
+            </li>
+
+            <!-- 3. Divulgar -->
+            <li class="bg-white rounded-2xl p-8 shadow-md border-t-4 border-leaf-500 flex flex-col">
+                <div class="w-14 h-14 rounded-full bg-leaf-100 text-leaf-500 flex items-center justify-center mb-4" aria-hidden="true">
+                    <i class="ph ph-share-network text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-earth-900 mb-2">Divulgar o projeto</h3>
+                <p class="text-earth-800 mb-6">Compartilhar já é uma forma de agir: quanto mais gente conhece os desafios do EcoVida, maior o impacto coletivo.</p>
+                <button type="button" id="btn-compartilhar" class="mt-auto bg-leaf-500 hover:bg-leaf-600 text-white font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2">
+                    <i class="ph ph-share-network" aria-hidden="true"></i> Compartilhar o site
+                </button>
+            </li>
+        </ul>
+
+        <!-- Mensagem de retorno das ações acima (lida por leitores de tela) -->
+        <p id="apoiar-aviso" class="text-center font-semibold text-leaf-600 mt-8 min-h-[1.5rem]" role="status" aria-live="polite"></p>
+    </div>
+</section>
+
+<script>
+(function () {
+    // Comportamentos da seção "Como apoiar"
+    var aviso = document.getElementById('apoiar-aviso');
+    var SITE = 'https://ecovidaproject.up.railway.app';
+
+    function avisar(texto) {
+        aviso.textContent = texto;
+        setTimeout(function () { aviso.textContent = ''; }, 5000);
+    }
+
+    // Copia texto para a área de transferência (com alternativa para navegadores antigos)
+    function copiar(texto) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(texto);
+        }
+        return new Promise(function (resolve, reject) {
+            var campo = document.createElement('textarea');
+            campo.value = texto;
+            campo.setAttribute('readonly', '');
+            campo.style.position = 'fixed';
+            campo.style.opacity = '0';
+            document.body.appendChild(campo);
+            campo.select();
+            try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+            document.body.removeChild(campo);
+        });
+    }
+
+    // 1) Copiar chave PIX (fictícia)
+    document.getElementById('btn-copiar-pix').addEventListener('click', function () {
+        var chave = document.getElementById('pix-chave').textContent.trim();
+        copiar(chave).then(function () {
+            avisar('Chave PIX de exemplo copiada. Lembrando: nenhuma doação real é processada.');
+        }).catch(function () {
+            avisar('Não foi possível copiar automaticamente. Selecione a chave e copie manualmente.');
+        });
+    });
+
+    // 2) Voluntariado: pré-seleciona o assunto "Voluntariado" no formulário e leva o foco até ele
+    document.getElementById('btn-voluntario').addEventListener('click', function (evento) {
+        var assunto = document.getElementById('assunto');
+        var mensagem = document.getElementById('mensagem');
+        if (!assunto) { return; } // sem formulário na página: segue o link normal
+        evento.preventDefault();
+
+        // Cria a opção "Voluntariado" caso ainda não exista no <select>
+        var opcao = assunto.querySelector('option[value="voluntariado"]');
+        if (!opcao) {
+            opcao = document.createElement('option');
+            opcao.value = 'voluntariado';
+            opcao.textContent = 'Voluntariado';
+            assunto.insertBefore(opcao, assunto.querySelector('option[value="outro"]'));
+        }
+        assunto.value = 'voluntariado';
+        assunto.dispatchEvent(new Event('change', { bubbles: true })); // limpa erro do campo, se houver
+
+        document.getElementById('form-titulo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (mensagem && mensagem.value === '') {
+            mensagem.placeholder = 'Conte como gostaria de ajudar e quando tem disponibilidade...';
+        }
+        (document.getElementById('nome') || assunto).focus({ preventScroll: true });
+        avisar('Assunto "Voluntariado" selecionado. Preencha o formulário para enviar seu interesse.');
+    });
+
+    // 3) Compartilhar o site (menu de compartilhamento do aparelho ou, se não houver, copia o link)
+    document.getElementById('btn-compartilhar').addEventListener('click', function () {
+        var dados = {
+            title: 'EcoVida — Impacto na Prática',
+            text: 'Aprenda, responda e aja por um dia a dia mais sustentável.',
+            url: SITE
+        };
+        if (navigator.share) {
+            navigator.share(dados).catch(function () { /* usuário cancelou: nada a fazer */ });
+        } else {
+            copiar(SITE).then(function () {
+                avisar('Link do site copiado. Cole onde quiser compartilhar.');
+            }).catch(function () {
+                avisar('Copie o endereço do site na barra do navegador para compartilhar.');
+            });
+        }
+    });
+})();
+</script>
 
     <section class="py-20 bg-white" aria-labelledby="equipe">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
