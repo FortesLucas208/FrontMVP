@@ -1,3 +1,18 @@
+/**
+ * validacao-formulario.js
+ * Validação do formulário de contato (contato.html) - EcoVida / Impacto na Prática
+ *
+ * O que este arquivo faz:
+ *  1. Desativa a validação nativa do navegador (novalidate) e valida em JavaScript.
+ *  2. Usa event.preventDefault() no envio e mostra mensagens de erro ao lado de cada campo.
+ *  3. Destaca visualmente os campos inválidos (aria-invalid + classes CSS) e move o foco
+ *     para o primeiro campo com erro.
+ *  4. Mostra um resumo de erros no topo do formulário (acessível para leitores de tela).
+ *  5. Em caso de sucesso, salva o último envio no localStorage e exibe confirmação.
+ *
+ * Como usar: incluir no final de contato.html, antes de </body>:
+ *   <script src="js/validacao-formulario.js" defer></script>
+ */
 (function () {
   'use strict';
 
